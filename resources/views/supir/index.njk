@@ -1,0 +1,26 @@
+{% extends 'master' %}
+
+{% block content %}
+
+    <div class="col-md-12 col-md-offset-0">
+
+        {{form.open({route:'supir.create'})}}
+            {{form.button('Create','',{class:'btn btn-success'})}}
+        {{form.close()}}
+
+<table class="table table-striped">
+<thead>
+    <tr>
+        <th>Name</th>
+    </tr>
+<thead/>
+<tbody>
+{% for supir in supir%}
+    <tr>
+    <td>{{supir.Name}}</td>
+    <th><a href="supir/{{supir.id}}">View</a></th>
+    <tr>
+{%endfor%}
+</tbody>
+
+{% endblock %}
