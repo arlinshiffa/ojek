@@ -8,8 +8,6 @@ class AdminsTableSchema extends Schema {
     this.create('admins', (table) => {
       table.increments()
       table.timestamps()
-      table.string('userName').unique()
-      table.string('password')
     })
   }
 

@@ -2,7 +2,7 @@
 
 const Schema = use('Schema')
 
-class TransaksisTableSchema extends Schema {
+class TransactionsTableSchema extends Schema {
 
   up () {
     this.create('transactions', (table) => {
@@ -17,4 +17,4 @@ class TransaksisTableSchema extends Schema {
 
 }
 
-module.exports = TransaksisTableSchema
+module.exports = TransactionsTableSchema

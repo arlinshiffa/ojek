@@ -8,12 +8,6 @@ class MembersTableSchema extends Schema {
     this.create('members', (table) => {
       table.increments()
       table.timestamps()
-      table.string('password')
-      table.string('noKTP', 16).unique()
-      table.string('email').unique()
-      table.string('noHP').unique()
-
-
     })
   }
 
