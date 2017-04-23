@@ -18,5 +18,6 @@
 const Route = use('Route')
 
 Route.on('/').render('welcome')
+Route.on('/master').render('master')
 Route.resource('driverIUD','DriverController')
 Route.resource('memberIUD','MemberController')

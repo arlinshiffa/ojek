@@ -1,14 +1,13 @@
 
 'use strict'
 
-const Driver = use('App/Model/Driver')
+const Driver= use('App/Model/Driver')
 
 class DriverController {
 
   * index(request, response) {
-    const driver = yield Driver.all()
-    yield response.sendView('driver/index', {driver:driver.toJSON()})
-
+    const drivers = yield Driver.all()
+    yield response.sendView('driver/index', {drivers:drivers.toJSON()})
   }
 
   * create(request, response) {
@@ -24,6 +23,7 @@ class DriverController {
   * show(request, response) {
     const driver=yield Driver.findBy('id', request.param('id'))
     yield response.sendView('driver/show',{driver:driver.toJSON()})
+
   }
 
   * edit(request, response) {
@@ -42,7 +42,7 @@ class DriverController {
   * destroy(request, response) {
     const driver =yield Driver.findBy('id', request.param('id'))
     yield driver.delete()
-    yield response.redirect('/driver')
+    yield response.redirect('/driverIUD')
 
   }
 

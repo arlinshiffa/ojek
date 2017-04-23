@@ -19,14 +19,14 @@
           </tr>
         <thead/>
         <tbody>
-        {% for driver in drivers%}
+        {% for driver in drivers %}
           <tr>
-            <td>{{driver.Name}}</td>
+            <td>{{driver.name}}</td>
             <td>{{driver.created_at }}</td>
 		        <td>{{ driver.updated_at }}</td>
 		        <td>{{ driver.SIM}}</td>
 		        <td>{{ driver.status }}</td>
-            <th><a href="driver/{{drivers.id}}">View</a></th>
+            <th><a href="driverIUD/{{driver.id}}">View</a></th>
           <tr>
           {%endfor%}
           </tbody>

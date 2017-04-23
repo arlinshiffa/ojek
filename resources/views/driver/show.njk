@@ -6,14 +6,13 @@
 		<table>
 			<tr>
 				<td style="padding-right: 10px;">
-
-    				{{ form.open({ route: 'driverIUD.edit', params: {id: drivers.id} }) }}
+    				{{ form.open({ route: 'driverIUD.edit', params: {id: driver.id} }) }}
     					{{ form.button('Update','', { class: 'btn btn-success '}) }}
     				{{ form.close() }}
 
     			</td>
     			<td>
-    				{{ form.open({ route: 'driverIUD.destroy', params: {id: drivers.id} }) }}
+    				{{ form.open({ route: 'driverIUD.destroy', params: {id: driver.id} }) }}
     					{{csrfField}}
     					{{ form.button('Delete','', { class: 'btn btn-danger '}) }}
 
@@ -27,25 +26,28 @@
 			<tbody>
 				<tr>
 					<th class="col-md-2">id</td>
-					<td class="col-md-6">{{ drivers.id }}</td>
+					<td class="col-md-6">{{ driver.id }}</td>
 				</tr>
 				<tr>
 					<th class="col-md-2">Create Date</th>
-					<td class="col-md-6">{{ drivers.created_at }}</td>
+					<td class="col-md-6">{{ driver.created_at }}</td>
 				</tr>
 				<tr>
 					<th class="col-md-2">Update Date</th>
-					<td class="col-md-6">{{ drivers.updated_at }}</td>
+					<td class="col-md-6">{{ driver.updated_at }}</td>
 				</tr>
 				<tr>
 					<th class="col-md-2">Name</th>
-					<td class="col-md-6">{{ drivers.name }}</td>
+					<td class="col-md-6">{{ driver.name }}</td>
 				</tr>
 				<tr>
 					<th class="col-md-2">Status</th>
-					<td class="col-md-6">{{ drivers.status }}</td>
+					<td class="col-md-6">{{ driver.status }}</td>
 				</tr>
-
+        <tr>
+					<th class="col-md-2">SIM</th>
+					<td class="col-md-6">{{ driver.SIM }}</td>
+				</tr>
 
 
 			</tbody>
