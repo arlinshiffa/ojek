@@ -12,6 +12,7 @@ class DriverController {
 
   * create(request, response) {
     yield response.sendView('driver/create')
+    yield response.sendView('driver/index', {drivers:drivers.toJSON()})
   }
 
   * store(request, response) {
