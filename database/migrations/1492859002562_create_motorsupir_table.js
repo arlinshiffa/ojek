@@ -2,19 +2,29 @@
 
 const Schema = use('Schema')
 
-class MotorSupirsTableSchema extends Schema {
+class DriversMotorTableSchema extends Schema {
 
   up () {
-    this.create('motor_supirs', (table) => {
+    this.create('driversMotor', (table) => {
       table.increments()
       table.timestamps()
+      
+      table.integer('idMotor').unsigned().index().references('id').inTable('users')
+      table.integer('idDriver').unsigned().index().references('id').inTable('users')
+      table.string('licensePlate')
+      table.string('color')
+      table.string('type')
+      table.boolean('status')
+      table.string('name')
+      table.string('SIM', 16)
+
     })
   }
 
   down () {
-    this.drop('motor_supirs')
+    this.drop('driversMotor')
   }
 
 }
 
-module.exports = MotorSupirsTableSchema
+module.exports = DriversMotorTableSchema

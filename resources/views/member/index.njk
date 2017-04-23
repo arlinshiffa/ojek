@@ -1,0 +1,32 @@
+{% extends 'master' %}
+
+{% block content %}
+
+<div class="col-md-12 col-md-offset-0">
+
+        {{form.open({route:'memberIUD.create'})}}
+            {{form.button('Create','',{class:'btn btn-success'})}}
+        {{form.close()}}
+
+        <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Number</th>
+
+          </tr>
+        <thead/>
+        <tbody>
+        {% for member in members%}
+          <tr>
+            <td>{{member.Name}}</td>
+            <td>{{member.created_at }}</td>
+		        <td>{{ member.updated_at }}</td>
+		        <td>{{ member.number}}</td>
+		        <td>{{ member.status }}</td>
+            <th><a href="member/{{members.id}}">View</a></th>
+          <tr>
+          {%endfor%}
+          </tbody>
+
+{% endblock %}

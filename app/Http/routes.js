@@ -17,7 +17,6 @@
 
 const Route = use('Route')
 
-Route.resource('supir','SupirController')
 Route.on('/').render('welcome')
-Route.on('/about').render('about')
-Route.on('/contact').render('contact')
+Route.resource('driverIUD','DriverController')
+Route.resource('memberIUD','MemberController')

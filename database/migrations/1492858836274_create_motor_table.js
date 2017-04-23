@@ -8,6 +8,10 @@ class MotorsTableSchema extends Schema {
     this.create('motors', (table) => {
       table.increments()
       table.timestamps()
+      table.string('licensePlate')
+      table.string('color')
+      table.string('type')
+
     })
   }
 

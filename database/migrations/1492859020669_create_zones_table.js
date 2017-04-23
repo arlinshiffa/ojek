@@ -8,6 +8,9 @@ class ZonesTableSchema extends Schema {
     this.create('zones', (table) => {
       table.increments()
       table.timestamps()
+      table.integer('fare')
+      table.string('name')
+
     })
   }
 
