@@ -1,7 +1,9 @@
 {% extends 'master' %}
 
 {% block content %}
-
+<head>
+<title>TABEL MEMBER</title>
+</head>
 	<div class="col-md-8 col-md-offset-2">
 		<div class="col-md-offset-2">
 		{% if successMessage %}
@@ -10,6 +12,7 @@
 				<strong>Success!</strong> {{successMessage}}.
 			</div>
 		{% endif %}
+
 		{% if old('errors') %}
 			<div class="alert alert-danger alert-dismissable">
 				{% for error in old('errors') %}
@@ -19,6 +22,11 @@
 			</div>
 
 		{% endif %}
+
+	<br>
+  <br>
+	<h3>Input new member</h3>
+	<br>
 		</div>
 		<div class="form-horizontal">
 		{{ form.open({route: 'memberIUD.store'}) }}
@@ -30,6 +38,7 @@
     			<div class="col-sm-6">
       				{{ form.text('name','',{ class: 'form-control'})}}
     			</div>
+     </div>
 
 					<div class="form-group">
 						{{ form.label('number','Number',{ class: 'col-sm-2 control-label'}) }}
@@ -38,13 +47,6 @@
 		    			</div>
     		</div>
 
-				<div class="form-group">
-					{{ form.label('userName','user Name',{ class: 'col-sm-2 control-label'}) }}
-						<div class="col-sm-6">
-								{{ form.text('userName','',{ class: 'form-control'})}}
-						</div>
-			</div>
-
 			<div class="form-group">
 				{{ form.label('email','email',{ class: 'col-sm-2 control-label'}) }}
 					<div class="col-sm-6">
@@ -52,12 +54,21 @@
 					</div>
 		</div>
 
+		<div class="form-group">
+			{{ form.label('KTP','KTP',{ class: 'col-sm-2 control-label'}) }}
+				<div class="col-sm-6">
+						{{ form.text('KTP','',{ class: 'form-control'})}}
+				</div>
+	</div>
+
 				    		<div class="form-group">
 				    			<div class="col-sm-offset-2 col-sm-10">
 				    				{{ form.submit('Create','submit', { class: ' btn btn-success'}) }}
 				    			</div>
 				    		</div>
 				    </div>
+
+
     	{{ form.close() }}
 		</div>
 	</div>

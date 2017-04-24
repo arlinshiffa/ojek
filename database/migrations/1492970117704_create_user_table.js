@@ -10,13 +10,16 @@ class UsersTableSchema extends Schema {
       table.timestamps()
       table.string('userName')
       table.string('password')
+      table.integer('idMember').unsigned().index().references('id').inTable('members')
+      table.integer('idOperator').unsigned().index().references('id').inTable('operators')
+      table.integer('idDriver').unsigned().index().references('id').inTable('drivers')
     })
 
 
   }
 
   down () {
-    this.drop('users')
+    this.dropIfExits('users')
   }
 
 }

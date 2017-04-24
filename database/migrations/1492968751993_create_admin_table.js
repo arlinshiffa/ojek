@@ -8,8 +8,7 @@ class AdminsTableSchema extends Schema {
     this.create('admins', (table) => {
       table.increments()
       table.timestamps()
-      table.string('userName')
-      table.integer('idAdmin').unsigned().index().references('id').inTable('users')
+
       table.string('name')
       table.string('number')
     })
@@ -18,7 +17,7 @@ class AdminsTableSchema extends Schema {
   }
 
   down () {
-    this.drop('admins')
+    this.dropIfExits('admins')
   }
 
 }

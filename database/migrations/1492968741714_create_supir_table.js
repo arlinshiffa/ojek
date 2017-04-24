@@ -11,15 +11,15 @@ class DriversTableSchema extends Schema {
       table.boolean('status')
       table.string('name')
       table.string('SIM', 12)
-      table.string('userName')
-      table.integer('idDriver').unsigned().index().references('id').inTable('users')
+
+
     })
 
 
   }
 
   down () {
-    this.drop('drivers')
+    this.dropIfExits('drivers')
   }
 
 }

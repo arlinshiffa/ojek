@@ -1,0 +1,41 @@
+{% extends 'master' %}
+
+{% block content %}
+<head>
+<title>TABEL ADMIN</title>
+</head>
+<div class="col-md-12 col-md-offset-0">
+  <h3><b>TABEL ADMIN</b></h3>
+  </br>
+  </br>
+
+
+        {{form.open({route:'adminIUD.create'})}}
+            {{form.button('Create','',{class:'btn btn-success'})}}
+        {{form.close()}}
+
+        <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Nama Admin</th>
+            <th>Create Date</th>
+		        <th>Update Date</th>
+		        <th>number</th>
+					  <th>id</th>
+          </tr>
+        <thead/>
+        <tbody>
+
+        {% for admin in admins %}
+          <tr>
+            <td>{{admin.name}}</td>
+            <td>{{admin.created_at }}</td>
+		        <td>{{ admin.updated_at }}</td>
+		        <td>{{ admin.number}}</td>
+		        <td>{{ admin.id }}</td>
+            <th><a href="adminIUD/{{admin.id}}">View</a></th>
+          <tr>
+          {%endfor%}
+          </tbody>
+
+{% endblock %}

@@ -9,8 +9,8 @@ class MembersTableSchema extends Schema {
       table.increments()
       table.timestamps()
       table.string('KTP', 16)
-      table.string('userName')
-      table.integer('idMember').unsigned().index().references('id').inTable('users')
+
+
 
       table.string('email')
       table.string('number')
@@ -21,7 +21,7 @@ class MembersTableSchema extends Schema {
 }
 
   down () {
-    this.drop('members')
+    this.dropIfExits('members')
   }
 
 }

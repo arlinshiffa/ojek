@@ -8,8 +8,8 @@ class OperatorsTableSchema extends Schema {
     this.create('operators', (table) => {
       table.increments()
       table.timestamps()
-      table.string('userName')
-      table.integer('idOperator').unsigned().index().references('id').inTable('users')
+
+
       table.string('name')
       table.string('number')
     })
@@ -18,7 +18,7 @@ class OperatorsTableSchema extends Schema {
   }
 
   down () {
-    this.drop('operators')
+    this.dropIfExits('operators')
   }
 
 }

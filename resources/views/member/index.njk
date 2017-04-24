@@ -1,9 +1,14 @@
 {% extends 'master' %}
 
 {% block content %}
-
+<head>
+<title>TABEL MEMBER</title>
+</head>
 <div class="col-md-12 col-md-offset-0">
 
+<h3><b>TABEL MEMBER</b></h3>
+</br>
+</br>
         {{form.open({route:'memberIUD.create'})}}
             {{form.button('Create','',{class:'btn btn-success'})}}
         {{form.close()}}
@@ -12,19 +17,24 @@
         <thead>
           <tr>
             <th>Name</th>
+            <th>Create Date</th>
+            <th>Update Date</th>
             <th>Number</th>
+            <th>KTP</th>
+            <th>email</th>
 
           </tr>
         <thead/>
         <tbody>
         {% for member in members%}
           <tr>
-            <td>{{member.Name}}</td>
+            <td>{{member.name}}</td>
             <td>{{member.created_at }}</td>
 		        <td>{{ member.updated_at }}</td>
 		        <td>{{ member.number}}</td>
-		        <td>{{ member.status }}</td>
-            <th><a href="member/{{members.id}}">View</a></th>
+		        <td>{{ member.KTP }}</td>
+            <td>{{ member.email }}</td>
+            <th><a href="memberIUD/{{member.id}}">View</a></th>
           <tr>
           {%endfor%}
           </tbody>

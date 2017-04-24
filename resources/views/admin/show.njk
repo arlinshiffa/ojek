@@ -2,7 +2,7 @@
 
 {% block content %}
 <head>
-<title>TABEL DRIVER</title>
+<title>TABEL ADMIN</title>
 </head>
 <BR>
 	<BR>
@@ -12,13 +12,13 @@
 		<table>
 			<tr>
 				<td style="padding-right: 10px;">
-    				{{ form.open({ route: 'driverIUD.edit', params: {id: driver.id} }) }}
+    				{{ form.open({ route: 'adminIUD.edit', params: {id: admin.id} }) }}
     					{{ form.button('Update','', { class: 'btn btn-success '}) }}
     				{{ form.close() }}
 
     			</td>
     			<td>
-    				{{ form.open({ route: 'driverIUD.destroy', params: {id: driver.id} }) }}
+    				{{ form.open({ route: 'adminIUD.destroy', params: {id: admin.id} }) }}
     					{{csrfField}}
     					{{ form.button('Delete','', { class: 'btn btn-danger '}) }}
 
@@ -32,28 +32,25 @@
 			<tbody>
 				<tr>
 					<th class="col-md-2">id</td>
-					<td class="col-md-6">{{ driver.id }}</td>
+					<td class="col-md-6">{{ admin.id }}</td>
 				</tr>
 				<tr>
 					<th class="col-md-2">Create Date</th>
-					<td class="col-md-6">{{ driver.created_at }}</td>
+					<td class="col-md-6">{{ admin.created_at }}</td>
 				</tr>
 				<tr>
 					<th class="col-md-2">Update Date</th>
-					<td class="col-md-6">{{ driver.updated_at }}</td>
+					<td class="col-md-6">{{ admin.updated_at }}</td>
 				</tr>
 				<tr>
-					<th class="col-md-2">Nama Driver</th>
-					<td class="col-md-6">{{ driver.name }}</td>
+					<th class="col-md-2">Nama Admin</th>
+					<td class="col-md-6">{{ admin.name }}</td>
 				</tr>
 				<tr>
-					<th class="col-md-2">Status</th>
-					<td class="col-md-6">{{ driver.status }}</td>
+					<th class="col-md-2">Number</th>
+					<td class="col-md-6">{{ admin.number }}</td>
 				</tr>
-        <tr>
-					<th class="col-md-2">SIM</th>
-					<td class="col-md-6">{{ driver.SIM }}</td>
-				</tr>
+
 
 
 			</tbody>

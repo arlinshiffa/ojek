@@ -1,8 +1,13 @@
 {% extends 'master' %}
 
 {% block content %}
-
+<head>
+<title>TABEL DRIVER</title>
+</head>
 <div class="col-md-12 col-md-offset-0">
+<h3><b>TABEL DRIVER</b></h3>
+</br>
+</br>
 
         {{form.open({route:'driverIUD.create'})}}
             {{form.button('Create','',{class:'btn btn-success'})}}
@@ -19,6 +24,7 @@
           </tr>
         <thead/>
         <tbody>
+
         {% for driver in drivers %}
           <tr>
             <td>{{driver.name}}</td>

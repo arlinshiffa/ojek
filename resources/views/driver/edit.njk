@@ -1,7 +1,7 @@
 {% extends 'master' %}
 
 {% block content %}
-
+</br>
 	<div class="col-md-8 col-md-offset-2">
 		<div class="col-md-offset-2">
 		{% if successMessage %}
@@ -20,6 +20,9 @@
 
 		{% endif %}
 		</div>
+	</br>
+</br>
+
 		<div class="form-horizontal">
 		{{ form.open({ route: 'driverIUD.update', params: {id: drivers.id} }) }}
 
@@ -46,7 +49,7 @@
     			</div>
     		</div>
 
-    		
+
     		<div class="form-group">
     			<div class="col-sm-offset-2 col-sm-10">
     				{{ form.submit('Update','submit', { class: ' btn btn-success'}) }}

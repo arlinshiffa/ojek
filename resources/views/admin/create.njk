@@ -1,6 +1,9 @@
 {% extends 'master' %}
 
 {% block content %}
+<head>
+<title>TABEL ADMIN</title>
+</head>
 
 	<div class="col-md-8 col-md-offset-2">
 		<div class="col-md-offset-2">
@@ -9,6 +12,7 @@
 				<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
 				<strong>Success!</strong> {{successMessage}}.
 			</div>
+
 		{% endif %}
 		{% if old('errors') %}
 			<div class="alert alert-danger alert-dismissable">
@@ -19,44 +23,38 @@
 			</div>
 
 		{% endif %}
+		</div>
 	</br>
 </br>
-		</div>
+<h3>Input new admin</h3>
+</br>
 		<div class="form-horizontal">
-		{{ form.open({ route: 'memberIUD.update', params: {id: members.id} }) }}
+		{{ form.open({route: 'adminIUD.store'}) }}
 
 			{{csrfField}}
 
 			<div class="form-group">
-				{{ form.label('name','member Name',{ class: 'col-sm-2 control-label'}) }}
+				{{ form.label('name','Nama Admin',{ class: 'col-sm-2 control-label'}) }}
     			<div class="col-sm-6">
-      				{{ form.text('name',members.name,{ class: 'form-control'})}}
+      				{{ form.text('name','',{ class: 'form-control'})}}
     			</div>
     		</div>
 
     		<div class="form-group">
 				{{ form.label('number','number',{ class: 'col-sm-2 control-label'}) }}
     			<div class="col-sm-6">
-      				{{ form.text('number',members.number,{ class: 'form-control'})}}
-    			</div>
-    		</div>
-
-    		<div class="form-group">
-				{{ form.label('email','email',{ class: 'col-sm-2 control-label'}) }}
-    			<div class="col-sm-6">
-      				{{ form.text('email',member.email,{ class: 'form-control'})}}
+      				{{ form.text('number','',{ class: 'form-control'})}}
     			</div>
     		</div>
 
 
     		<div class="form-group">
     			<div class="col-sm-offset-2 col-sm-10">
-    				{{ form.submit('Update','submit', { class: ' btn btn-success'}) }}
+    				{{ form.submit('Create','submit', { class: ' btn btn-success'}) }}
     			</div>
     		</div>
     	{{ form.close() }}
 		</div>
 	</div>
-
 
 {% endblock %}

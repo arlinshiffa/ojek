@@ -15,7 +15,7 @@ class ZonesTableSchema extends Schema {
   }
 
   down () {
-    this.drop('zones')
+    this.dropIfExits('zones')
   }
 
 }

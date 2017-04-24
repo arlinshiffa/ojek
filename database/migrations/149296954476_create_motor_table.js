@@ -16,7 +16,7 @@ class MotorsTableSchema extends Schema {
   }
 
   down () {
-    this.drop('motors')
+    this.dropIfExits('motors')
   }
 
 }

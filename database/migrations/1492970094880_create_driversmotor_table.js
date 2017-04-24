@@ -8,9 +8,9 @@ class DriversMotorTableSchema extends Schema {
     this.create('driversMotor', (table) => {
       table.increments()
       table.timestamps()
-      
-      table.integer('idMotor').unsigned().index().references('id').inTable('users')
-      table.integer('idDriver').unsigned().index().references('id').inTable('users')
+
+      table.integer('idMotor').unsigned().index().references('id').inTable('motors')
+      table.integer('idDriver').unsigned().index().references('id').inTable('drivers')
       table.string('licensePlate')
       table.string('color')
       table.string('type')
@@ -22,7 +22,7 @@ class DriversMotorTableSchema extends Schema {
   }
 
   down () {
-    this.drop('driversMotor')
+    this.dropIfExits('driversMotor')
   }
 
 }
