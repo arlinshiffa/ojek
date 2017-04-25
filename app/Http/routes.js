@@ -16,9 +16,13 @@
 */
 
 const Route = use('Route')
-
+Route.get('login','LoginController.login')
 Route.on('/').render('welcome')
 Route.on('/master').render('master')
+Route.on('/admin').render('admin')
+Route.on('/member').render('member')
+Route.on('/operator').render('operator')
+Route.on('/supir').render('supir')
 Route.resource('driverIUD','DriverController')
 Route.resource('memberIUD','MemberController')
 Route.resource('adminIUD','AdminController')
