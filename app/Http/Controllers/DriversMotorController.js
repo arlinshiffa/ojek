@@ -1,52 +1,52 @@
 
 'use strict'
 
-const driversMotor= use('App/Model/driversMotor')
+const DriverMotor= use('App/Model/DriverMotor')
 
-class driversMotorController {
+class DriverMotorController {
 
   * index(request, response) {
-    const driversMotor = yield driversMotor.all()
-    yield response.sendView('driversMotor/index', {driversMotor:driversMotor.toJSON()})
+    const driverMotors = yield DriverMotor.all()
+    yield response.sendView('driverMotor/index', {driverMotors:driverMotors.toJSON()})
   }
 
   * create(request, response) {
-    yield response.sendView('driversMotor/create')
-    yield response.sendView('driversMotor/index', {driversMotors:driversMotors.toJSON()})
+    yield response.sendView('driverMotor/create')
+    yield response.sendView('driverMotor/index', {driverMotors:driverMotors.toJSON()})
   }
 
   * store(request, response) {
-    const driversMotorData = request.except('_csrf','submit')
-    yield driversMotor.create(driversMotorData)
+    const driverMotorData = request.except('_csrf','submit')
+    yield DriverMotor.create(driverMotorData)
 
   }
 
   * show(request, response) {
-    const driversMotor=yield driversMotor.findBy('id', request.param('id'))
-    yield response.sendView('driversMotor/show',{driversMotor:driversMotor.toJSON()})
+    const driverMotor=yield DriverMotor.findBy('id', request.param('id'))
+    yield response.sendView('driverMotor/show',{driverMotor:driverMotor.toJSON()})
 
   }
 
   * edit(request, response) {
-    const driversMotor=yield driversMotor.findBy('id', request.param('id'))
-    yield response.sendView('driversMotor/show',{driversMotor:driversMotor.toJSON()})
+    const driverMotor=yield DriverMotor.findBy('id', request.param('id'))
+    yield response.sendView('driverMotor/show',{driverMotor:driverMotor.toJSON()})
   }
 
   * update(request, response) {
-    const driversMotorData = request.except('_csrf','submit')
-    const driversMotor= yield driversMotor.findBy('id', request.param('id'))
-    driversMotor.name = driversMotorData.name
-    yield driversMotor.save()
+    const driverMotorData = request.except('_csrf','submit')
+    const driverMotor= yield DriverMotor.findBy('id', request.param('id'))
+    driverMotor.name = driverMotorData.name
+    yield driverMotor.save()
     yield response.redirect(request.param('id'))
   }
 
   * destroy(request, response) {
-    const driversMotor =yield driversMotor.findBy('id', request.param('id'))
-    yield driversMotor.delete()
-    yield response.redirect('/driversMotorIUD')
+    const driverMotor =yield DriverMotor.findBy('id', request.param('id'))
+    yield driverMotor.delete()
+    yield response.redirect('/driverMotorIUD')
 
   }
 
 }
 
-module.exports = driversMotorController
+module.exports = DriverMotorController

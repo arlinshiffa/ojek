@@ -1,13 +1,13 @@
 
 'use strict'
 
-const user= use('App/Model/user')
+const User= use('App/Model/User')
 
-class userController {
+class UserController {
 
   * index(request, response) {
-    const user = yield user.all()
-    yield response.sendView('user/index', {user:user.toJSON()})
+    const users = yield User.all()
+    yield response.sendView('user/index', {users:users.toJSON()})
   }
 
   * create(request, response) {
@@ -17,31 +17,31 @@ class userController {
 
   * store(request, response) {
     const userData = request.except('_csrf','submit')
-    yield user.create(userData)
+    yield User.create(userData)
 
   }
 
   * show(request, response) {
-    const user=yield user.findBy('id', request.param('id'))
+    const user=yield User.findBy('id', request.param('id'))
     yield response.sendView('user/show',{user:user.toJSON()})
 
   }
 
   * edit(request, response) {
-    const user=yield user.findBy('id', request.param('id'))
+    const user=yield User.findBy('id', request.param('id'))
     yield response.sendView('user/show',{user:user.toJSON()})
   }
 
   * update(request, response) {
     const userData = request.except('_csrf','submit')
-    const user= yield user.findBy('id', request.param('id'))
+    const user= yield User.findBy('id', request.param('id'))
     user.name = userData.name
     yield user.save()
     yield response.redirect(request.param('id'))
   }
 
   * destroy(request, response) {
-    const user =yield user.findBy('id', request.param('id'))
+    const user =yield User.findBy('id', request.param('id'))
     yield user.delete()
     yield response.redirect('/userIUD')
 
@@ -49,4 +49,4 @@ class userController {
 
 }
 
-module.exports = userController
+module.exports = UserController

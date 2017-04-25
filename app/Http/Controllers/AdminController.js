@@ -6,8 +6,8 @@ const Admin= use('App/Model/Admin')
 class AdminController {
 
   * index(request, response) {
-    const admin = yield Admin.all()
-    yield response.sendView('admin/index', {admin:admin.toJSON()})
+    const admins = yield Admin.all()
+    yield response.sendView('admin/index', {admins:admins.toJSON()})
   }
 
   * create(request, response) {
@@ -17,7 +17,7 @@ class AdminController {
 
   * store(request, response) {
     const adminData = request.except('_csrf','submit')
-    yield Admin.create(driverData)
+    yield Admin.create(adminData)
 
   }
 

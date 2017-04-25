@@ -1,0 +1,64 @@
+{% extends 'master' %}
+
+{% block content %}
+<head>
+<title>TABEL ZONE</title>
+</head>
+	<div class="col-md-8 col-md-offset-2">
+		<div class="col-md-offset-2">
+		{% if successMessage %}
+			<div class="alert alert-success alert-dismissable">
+				<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+				<strong>Success!</strong> {{successMessage}}.
+			</div>
+		{% endif %}
+
+		{% if old('errors') %}
+			<div class="alert alert-danger alert-dismissable">
+				{% for error in old('errors') %}
+					<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+					<li> {{ error.message }} </li>
+				{% endfor %}
+			</div>
+
+		{% endif %}
+
+	<br>
+  <br>
+	<h3>Input new zone</h3>
+	<br>
+		</div>
+		<div class="form-horizontal">
+		{{ form.open({route: 'zoneIUD.store'}) }}
+
+			{{csrfField}}
+
+
+
+					<div class="form-group">
+						{{ form.label('name','Name',{ class: 'col-sm-2 control-label'}) }}
+		    			<div class="col-sm-6">
+		      				{{ form.text('name','',{ class: 'form-control'})}}
+		    			</div>
+    		</div>
+
+			<div class="form-group">
+				{{ form.label('fare','Fare',{ class: 'col-sm-2 control-label'}) }}
+					<div class="col-sm-6">
+							{{ form.text('fare','',{ class: 'form-control'})}}
+					</div>
+		</div>
+
+				    		<div class="form-group">
+				    			<div class="col-sm-offset-2 col-sm-10">
+				    				{{ form.submit('Create','submit', { class: ' btn btn-success'}) }}
+				    			</div>
+				    		</div>
+				    </div>
+
+
+    	{{ form.close() }}
+		</div>
+	</div>
+
+{% endblock %}

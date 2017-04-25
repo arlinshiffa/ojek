@@ -1,18 +1,18 @@
 
 'use strict'
 
-const Member= use('App/Model/member')
+const Member= use('App/Model/Member')
 
-class memberController {
+class MemberController {
 
   * index(request, response) {
-    const member = yield Member.all()
-    yield response.sendView('member/index', {member:member.toJSON()})
+    const members = yield Member.all()
+    yield response.sendView('member/index', {members:members.toJSON()})
   }
 
   * create(request, response) {
     yield response.sendView('member/create')
-    yield response.sendView('member/index', {member:member.toJSON()})
+    yield response.sendView('member/index', {members:members.toJSON()})
   }
 
   * store(request, response) {
@@ -49,4 +49,4 @@ class memberController {
 
 }
 
-module.exports = memberController
+module.exports = MemberController

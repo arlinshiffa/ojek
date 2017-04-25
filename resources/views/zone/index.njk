@@ -1,0 +1,41 @@
+{% extends 'master' %}
+
+{% block content %}
+<head>
+<title>TABEL ZONE</title>
+</head>
+<div class="col-md-12 col-md-offset-0">
+
+<h3><b>TABEL ZONE</b></h3>
+</br>
+</br>
+        {{form.open({route:'zoneIUD.create'})}}
+            {{form.button('Create','',{class:'btn btn-success'})}}
+        {{form.close()}}
+
+        <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Create Date</th>
+            <th>Update Date</th>
+            <th>Name</th>
+            <th>Fare</th>
+          </tr>
+        <thead/>
+        <tbody>
+
+        {% for zone in zones %}
+          <tr>
+            <td>{{zone.id}}</td>
+            <td>{{zone.created_at }}</td>
+		        <td>{{ zone.updated_at }}</td>
+		        <td>{{ zone.name}}</td>
+		        <td>{{ zone.fare }}</td>
+
+            <th><a href="zoneIUD/{{zone.id}}">View</a></th>
+          <tr>
+          {%endfor%}
+          </tbody>
+
+{% endblock %}

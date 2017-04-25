@@ -2,7 +2,7 @@
 
 {% block content %}
 <head>
-<title>TABEL MEMBER</title>
+<title>TABEL MOTOR</title>
 </head>
 <BR>
 	<BR>
@@ -11,13 +11,13 @@
 			<tr>
 				<td style="padding-right: 10px;">
 
-    				{{ form.open({ route: 'memberIUD.edit', params: {id: member.id} }) }}
+    				{{ form.open({ route: 'motorIUD.edit', params: {id: motor.id} }) }}
     					{{ form.button('Update','', { class: 'btn btn-success '}) }}
     				{{ form.close() }}
 
     			</td>
     			<td>
-    				{{ form.open({ route: 'memberIUD.destroy', params: {id: member.id} }) }}
+    				{{ form.open({ route: 'motorIUD.destroy', params: {id: motor.id} }) }}
     					{{csrfField}}
     					{{ form.button('Delete','', { class: 'btn btn-danger '}) }}
 
@@ -31,31 +31,27 @@
 			<tbody>
 				<tr>
 					<th class="col-md-2">id</td>
-					<td class="col-md-6">{{ member.id }}</td>
+					<td class="col-md-6">{{ motor.id }}</td>
 				</tr>
 				<tr>
 					<th class="col-md-2">Create Date</th>
-					<td class="col-md-6">{{ member.created_at }}</td>
+					<td class="col-md-6">{{ motor.created_at }}</td>
 				</tr>
 				<tr>
 					<th class="col-md-2">Update Date</th>
-					<td class="col-md-6">{{ member.updated_at }}</td>
+					<td class="col-md-6">{{ motor.updated_at }}</td>
 				</tr>
 				<tr>
 					<th class="col-md-2">Name</th>
-					<td class="col-md-6">{{ member.name }}</td>
+					<td class="col-md-6">{{ motor.type}}</td>
 				</tr>
 				<tr>
 					<th class="col-md-2">Number</th>
-					<td class="col-md-6">{{ member.number }}</td>
+					<td class="col-md-6">{{ motor.licensePlate }}</td>
 				</tr>
 				<tr>
 					<th class="col-md-2">Number</th>
-					<td class="col-md-6">{{ member.KTP }}</td>
-				</tr>
-				<tr>
-					<th class="col-md-2">Number</th>
-					<td class="col-md-6">{{ member.email }}</td>
+					<td class="col-md-6">{{ motor.color }}</td>
 				</tr>
 
 

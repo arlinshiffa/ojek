@@ -1,13 +1,13 @@
 
 'use strict'
 
-const transaction= use('App/Model/transaction')
+const Transaction= use('App/Model/Transaction')
 
-class transactionController {
+class TransactionController {
 
   * index(request, response) {
-    const transaction = yield operator.all()
-    yield response.sendView('transaction/index', {transaction:transaction.toJSON()})
+    const transactions = yield Transaction.all()
+    yield response.sendView('transaction/index', {transactions:transactions.toJSON()})
   }
 
   * create(request, response) {
@@ -17,31 +17,31 @@ class transactionController {
 
   * store(request, response) {
     const transactionData = request.except('_csrf','submit')
-    yield transaction.create(operatorData)
+    yield Transaction.create(transactionData)
 
   }
 
   * show(request, response) {
-    const transaction=yield transaction.findBy('id', request.param('id'))
+    const transaction=yield Transaction.findBy('id', request.param('id'))
     yield response.sendView('transaction/show',{transaction:transaction.toJSON()})
 
   }
 
   * edit(request, response) {
-    const transaction=yield transaction.findBy('id', request.param('id'))
+    const transaction=yield Transaction.findBy('id', request.param('id'))
     yield response.sendView('transaction/show',{transaction:transaction.toJSON()})
   }
 
   * update(request, response) {
     const transactionData = request.except('_csrf','submit')
-    const transaction= yield transaction.findBy('id', request.param('id'))
+    const transaction= yield Transaction.findBy('id', request.param('id'))
     transaction.name = transactionData.name
     yield transaction.save()
     yield response.redirect(request.param('id'))
   }
 
   * destroy(request, response) {
-    const transaction =yield transaction.findBy('id', request.param('id'))
+    const transaction =yield Transaction.findBy('id', request.param('id'))
     yield transaction.delete()
     yield response.redirect('/transactionIUD')
 
@@ -49,4 +49,4 @@ class transactionController {
 
 }
 
-module.exports = transactionController
+module.exports = TransactionController

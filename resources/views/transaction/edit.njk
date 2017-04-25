@@ -1,0 +1,56 @@
+{% extends 'master' %}
+
+{% block content %}
+</br>
+	<div class="col-md-8 col-md-offset-2">
+		<div class="col-md-offset-2">
+		{% if successMessage %}
+			<div class="alert alert-success alert-dismissable">
+				<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+				<strong>Success!</strong> {{successMessage}}.
+			</div>
+		{% endif %}
+		{% if old('errors') %}
+			<div class="alert alert-danger alert-dismissable">
+				{% for error in old('errors') %}
+					<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+					<li> {{ error.message }} </li>
+				{% endfor %}
+			</div>
+
+		{% endif %}
+		</div>
+	</br>
+</br>
+
+		<div class="form-horizontal">
+		{{ form.open({ route: 'driverIUD.update', params: {id: operators.id} }) }}
+
+			{{csrfField}}
+
+			<div class="form-group">
+				{{ form.label('name','Nama Operator',{ class: 'col-sm-2 control-label'}) }}
+    			<div class="col-sm-6">
+      				{{ form.text('name',operators.name,{ class: 'form-control'})}}
+    			</div>
+    		</div>
+
+    		<div class="form-group">
+				{{ form.label('number','number',{ class: 'col-sm-2 control-label'}) }}
+    			<div class="col-sm-6">
+      				{{ form.text('number',operators.number,{ class: 'form-control'})}}
+    			</div>
+    		</div>
+
+
+
+    		<div class="form-group">
+    			<div class="col-sm-offset-2 col-sm-10">
+    				{{ form.submit('Update','submit', { class: ' btn btn-success'}) }}
+    			</div>
+    		</div>
+    	{{ form.close() }}
+		</div>
+	</div>
+
+{% endblock %}

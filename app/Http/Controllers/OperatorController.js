@@ -1,13 +1,13 @@
 
 'use strict'
 
-const operator= use('App/Model/operator')
+const Operator= use('App/Model/Operator')
 
-class operatorController {
+class OperatorController {
 
   * index(request, response) {
-    const operator = yield operator.all()
-    yield response.sendView('operator/index', {operator:operator.toJSON()})
+    const operators = yield Operator.all()
+    yield response.sendView('operator/index', {operators:operators.toJSON()})
   }
 
   * create(request, response) {
@@ -17,36 +17,36 @@ class operatorController {
 
   * store(request, response) {
     const operatorData = request.except('_csrf','submit')
-    yield operator.create(operatorData)
+    yield Operator.create(operatorData)
 
   }
 
   * show(request, response) {
-    const operator=yield operator.findBy('id', request.param('id'))
+    const operator=yield Operator.findBy('id', request.param('id'))
     yield response.sendView('operator/show',{operator:operator.toJSON()})
 
   }
 
   * edit(request, response) {
-    const operator=yield operator.findBy('id', request.param('id'))
+    const operator=yield Operator.findBy('id', request.param('id'))
     yield response.sendView('operator/show',{operator:operator.toJSON()})
   }
 
   * update(request, response) {
     const operatorData = request.except('_csrf','submit')
-    const operator= yield operator.findBy('id', request.param('id'))
+    const operator= yield Operator.findBy('id', request.param('id'))
     operator.name = operatorData.name
-    yield operator.save()
+    yield Operator.save()
     yield response.redirect(request.param('id'))
   }
 
   * destroy(request, response) {
-    const operator =yield operator.findBy('id', request.param('id'))
-    yield operator.delete()
+    const operator =yield Operator.findBy('id', request.param('id'))
+    yield Operator.delete()
     yield response.redirect('/operatorIUD')
 
   }
 
 }
 
-module.exports = operatorController
+module.exports = OperatorController

@@ -1,0 +1,42 @@
+{% extends 'master' %}
+
+{% block content %}
+<head>
+<title>TABEL MOTOR</title>
+</head>
+<div class="col-md-12 col-md-offset-0">
+
+<h3><b>TABEL MOTOR</b></h3>
+</br>
+</br>
+        {{form.open({route:'motorIUD.create'})}}
+            {{form.button('Create','',{class:'btn btn-success'})}}
+        {{form.close()}}
+
+        <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Motor Type</th>
+            <th>Create Date</th>
+            <th>Update Date</th>
+            <th>License Plate</th>
+            <th>color</th>
+            <th>type</th>
+          </tr>
+        <thead/>
+        <tbody>
+
+        {% for motor in motors %}
+          <tr>
+            <td>{{motor.type}}</td>
+            <td>{{motor.created_at }}</td>
+		        <td>{{ motor.updated_at }}</td>
+		        <td>{{ motor.licensePlate}}</td>
+		        <td>{{ motor.color }}</td>
+            <td>{{ motor.type }}</td>
+            <th><a href="motorIUD/{{motor.id}}">View</a></th>
+          <tr>
+          {%endfor%}
+          </tbody>
+
+{% endblock %}

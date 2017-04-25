@@ -1,0 +1,62 @@
+{% extends 'master' %}
+
+{% block content %}
+
+	<div class="col-md-8 col-md-offset-2">
+		<div class="col-md-offset-2">
+		{% if successMessage %}
+			<div class="alert alert-success alert-dismissable">
+				<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+				<strong>Success!</strong> {{successMessage}}.
+			</div>
+		{% endif %}
+		{% if old('errors') %}
+			<div class="alert alert-danger alert-dismissable">
+				{% for error in old('errors') %}
+					<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+					<li> {{ error.message }} </li>
+				{% endfor %}
+			</div>
+
+		{% endif %}
+	</br>
+</br>
+		</div>
+		<div class="form-horizontal">
+		{{ form.open({ route: 'motorIUD.update', params: {id: motors.id} }) }}
+
+			{{csrfField}}
+
+			<div class="form-group">
+				{{ form.label('type','motor type',{ class: 'col-sm-2 control-label'}) }}
+    			<div class="col-sm-6">
+      				{{ form.text('type',motors.name,{ class: 'form-control'})}}
+    			</div>
+    		</div>
+
+    		<div class="form-group">
+				{{ form.label('licensePlate','license plate',{ class: 'col-sm-2 control-label'}) }}
+    			<div class="col-sm-6">
+      				{{ form.text('licensePlate',motors.number,{ class: 'form-control'})}}
+    			</div>
+    		</div>
+
+    		<div class="form-group">
+				{{ form.label('em','color',{ class: 'col-sm-2 control-label'}) }}
+    			<div class="col-sm-6">
+      				{{ form.text('color',motor.color,{ class: 'form-control'})}}
+    			</div>
+    		</div>
+
+
+    		<div class="form-group">
+    			<div class="col-sm-offset-2 col-sm-10">
+    				{{ form.submit('Update','submit', { class: ' btn btn-success'}) }}
+    			</div>
+    		</div>
+    	{{ form.close() }}
+		</div>
+	</div>
+
+
+{% endblock %}

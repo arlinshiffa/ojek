@@ -1,52 +1,52 @@
 
 'use strict'
 
-const member= use('App/Model/member')
+const Motor= use('App/Model/Motor')
 
-class memberController {
+class MotorController {
 
   * index(request, response) {
-    const member = yield member.all()
-    yield response.sendView('member/index', {member:member.toJSON()})
+    const motors = yield Motor.all()
+    yield response.sendView('motor/index', {motors:motors.toJSON()})
   }
 
   * create(request, response) {
-    yield response.sendView('member/create')
-    yield response.sendView('member/index', {members:members.toJSON()})
+    yield response.sendView('motor/create')
+    yield response.sendView('motor/index', {motors:motors.toJSON()})
   }
 
   * store(request, response) {
-    const memberData = request.except('_csrf','submit')
-    yield member.create(memberData)
+    const motorData = request.except('_csrf','submit')
+    yield Motor.create(motorData)
 
   }
 
   * show(request, response) {
-    const member=yield member.findBy('id', request.param('id'))
-    yield response.sendView('member/show',{member:member.toJSON()})
+    const motor=yield Motor.findBy('id', request.param('id'))
+    yield response.sendView('motor/show',{motor:motor.toJSON()})
 
   }
 
   * edit(request, response) {
-    const member=yield member.findBy('id', request.param('id'))
-    yield response.sendView('member/show',{member:member.toJSON()})
+    const motor=yield Motor.findBy('id', request.param('id'))
+    yield response.sendView('motor/show',{motor:motor.toJSON()})
   }
 
   * update(request, response) {
-    const memberData = request.except('_csrf','submit')
-    const member= yield member.findBy('id', request.param('id'))
-    member.name = memberData.name
-    yield member.save()
+    const motorData = request.except('_csrf','submit')
+    const motor= yield Motor.findBy('id', request.param('id'))
+    motor.name = motorData.name
+    yield Motor.save()
     yield response.redirect(request.param('id'))
   }
 
   * destroy(request, response) {
-    const member =yield member.findBy('id', request.param('id'))
-    yield member.delete()
-    yield response.redirect('/memberIUD')
+    const motor =yield Motor.findBy('id', request.param('id'))
+    yield motor.delete()
+    yield response.redirect('/motorIUD')
 
   }
 
 }
 
-module.exports = memberController
+module.exports = MotorController
