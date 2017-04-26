@@ -16,7 +16,14 @@
 */
 
 const Route = use('Route')
-Route.get('login','LoginController.login')
+
+// Route.get('/','ListController.show')
+// Route.get('/login','AuthController.index')
+// Route.port('/login','AuthController')
+//
+// Route.get('/register','RegisterController.index')
+// Route.post('register', 'RegisterController.doRegister')
+
 Route.on('/').render('welcome')
 Route.on('/master').render('master')
 Route.on('/admin').render('admin')

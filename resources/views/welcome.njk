@@ -23,6 +23,25 @@
 </head>
 
 <body>
+
+  <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="logo" href="index.html"><img src="img/motorbike.svg" height=50px alt="Logo"></a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+
+          </ul>
+        </div><!--/.navbar-collapse -->
+      </div>
+    </div>
+
  <header>
         <div class="row header-info">
           <div class="col-sm-10 col-sm-offset-1 text-center">
@@ -35,10 +54,10 @@
               <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
                 <div class="row">
                   <div class="col-xs-6 text-right wow fadeInUp" data-wow-delay="1s">
-                    <a href="#masuk" class="btn btn-secondary btn-lg scroll">MASUK</a>
+                    <a href="#login" class="btn btn-secondary btn-lg scroll">LOG IN</a>
                   </div>
                   <div class="col-xs-6 text-left wow fadeInUp" data-wow-delay="1.4s">
-                    <a href="#pendaftaran" class="btn btn-primary btn-lg scroll">DAFTAR</a>
+                    <a href="#register" class="btn btn-primary btn-lg scroll">REGISTER</a>
                   </div>
                 </div><!--End Button Row-->
               </div>
@@ -49,7 +68,7 @@
       </div>
     </header>
     <!--Pendaftaran-->
-    <section id="pendaftaran" class="pad-lg light-gray-bg">
+    <section id="register" class="pad-lg light-gray-bg">
       <div class="container">
         <div class="row">
           <div class="col-sm-8 col-sm-offset-2 text-center">
@@ -64,7 +83,7 @@
                 <form role="form">
                   <div class="form-group">
                     <input type="name" class="form-control" id="nama" placeholder="Masukkan nama Anda disini">
-                    <input type="userName" class="form-control" id="userName" placeholder="Masukkan id Anda" maxlength="7" >
+                    <input type="userName" class="form-control" id="userName" placeholder="Masukkan user Name Anda" maxlength="7" >
                     <input type="noKTP" class="form-control" id="noKTP" placeholder="Masukkan No KTP Anda" maxlength="15" >
                     <input type="email" class="form-control" id="email" placeholder="Masukkan email Anda disini">
                     <input type="password" class="form-control" id="password" maxlength="10" placeholder="Buatlah password sebanyak 6 karakter">
@@ -81,7 +100,7 @@
     </section>
 
     <!--Masuk-->
-    <section id="masuk" class="pad-lg light-gray-bg">
+    <section id="login" class="pad-lg light-gray-bg">
       <div class="container">
         <div class="row">
           <div class="col-sm-8 col-sm-offset-2 text-center">
@@ -91,7 +110,7 @@
               <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
                 <form role="form">
                   <div class="form-group">
-                    <input type="name" class="form-control" id="email" placeholder="Masukkan email Anda disini">
+                    <input type="name" class="form-control" id="email" placeholder="Masukkan user name Anda disini">
                     <input type="password" class="form-control" id="password" minlength="6" maxlength="6" placeholder="Masukkan password Anda">
 
                   </div>
