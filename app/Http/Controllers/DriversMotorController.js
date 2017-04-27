@@ -29,7 +29,7 @@ class DriverMotorController {
 
   * edit(request, response) {
     const driverMotor=yield DriverMotor.findBy('id', request.param('id'))
-    yield response.sendView('driverMotor/show',{driverMotor:driverMotor.toJSON()})
+    yield response.sendView('driverMotor/edit',{driverMotor:driverMotor.toJSON()})
   }
 
   * update(request, response) {

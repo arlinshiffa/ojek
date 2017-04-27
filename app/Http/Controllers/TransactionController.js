@@ -12,7 +12,7 @@ class TransactionController {
 
   * create(request, response) {
     yield response.sendView('transaction/create')
-    yield response.sendView('transaction/index', {transactions:transactions.toJSON()})
+    yield response.sendView('transaction/edit', {transactions:transactions.toJSON()})
   }
 
   * store(request, response) {

@@ -1,11 +1,13 @@
-{% extends 'master' %}
+
 <!DOCTYPE html>
 <html lang="en">
-{% block content %}
+
+
 <head>
-    <title>Bootstrap Example</title>
+    <title>Admin Ojek</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -19,7 +21,7 @@
         /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
 
         .row.content {
-            height: 450px
+            height: 550px
         }
         /* Set gray background color and 100% height */
 
@@ -46,97 +48,93 @@
                 height: auto;
             }
         }
+        /* MORE */
+
+        h1 {
+            font-family: 'Boogaloo', cursive;
+        }
+
+        h2 {
+            font-family: 'Ruda', sans-serif;
+        }
+
+        p1 {
+            font-weight: bold;
+            color: brown;
+        }
+        .panel-heading{
+            font-size: medium;
+            font-weight: bold;
+        }
     </style>
 </head>
 
 <body>
-<header>
-    <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+    <header>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-                <a class="navbar-brand" >Halaman Utama Admin</a>
+                    <a class="navbar-brand">Halaman Utama Admin</a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+        </nav>
 
-    <div class="container-fluid text-center">
-        <div class="row content">
-            <div class="col-sm-8 text-left">
-                <h1>Selamat Datang, Admin!</h1>
-                <p>Disini Anda dapat insert, delete dan update seluruh data supir, motor, zona dan member.</p>
-                <hr>
-                <div class="container">
-                    <h2>Daftar Supir</h2>
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th>ID Supir</th>
-                                <th>Nama Supir</th>
-                                <th>No SIM</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-                    </table>
+        <div class="container-fluid text-center">
+            <div class="row content">
+                <div class="col-sm-10 text-left">
+                    <h1>Selamat Datang, Admin!</h1>
+                    <p1>Disini Anda dapat insert, delete dan update seluruh data supir, motor, zona dan member.</p1>
+                    <hr>
+                    <div class="container">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">Daftar Driver</div>
+                            <div class="panel-body">
+                              
+                            <a href="/driver/index"><button type="button" class="btn btn-danger btn-sm">IUD Driver</button></a>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">Daftar Motor</div>
+                            <div class="panel-body">
+                                <button type="button" class="btn btn-danger btn-sm">IUD Motor</button>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">Daftar Zona</div>
+                            <div class="panel-body">
+                                <button type="button" class="btn btn-danger btn-sm">IUD Zona</button>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="panel panel-info">
+                            <div class="panel-heading">Daftar Member</div>
+                            <div class="panel-body">
+                                <button type="button" class="btn btn-danger btn-sm">IUD Member</button>
+                                </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="container">
-                    <h2>Daftar Motor</h2>
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th>ID Motor</th>
-                                <th>No Polisi</th>
-                                <th>Warna</th>
-                                <th>Tipe</th>
-                            </tr>
-                        </thead>
-                    </table>
-                </div>
-                <div class="container">
-                    <h2>Daftar Zona</h2>
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th>ID Zona</th>
-                                <th>Nama</th>
-                                <th>Tarif Zona</th>
-                            </tr>
-                        </thead>
-                    </table>
-                </div>
-                <div class="container">
-                    <h2>Daftar Member</h2>
-                    <table class="table table-bordered">
-                        <thead>
-                            <tr>
-                                <th>ID Member</th>
-                                <th>Nama</th>
-                                <th>No HP</th>
-                                <th>Email</th>
-                                <th>KTP</th>
-                            </tr>
-                        </thead>
-                    </table>
-                </div>
-
+                </br>
             </div>
         </div>
-    </div>
 
-    <footer class="container-fluid text-center">
-        <p>Oke Ojeg</p>
-    </footer>
-</header>
+        <footer class="container-fluid text-center">
+            <p>Oke Ojeg</p>
+        </footer>
+    </header>
 </body>
-
-
-{% endblock %}

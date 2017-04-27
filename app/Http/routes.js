@@ -17,19 +17,20 @@
 
 const Route = use('Route')
 
-// Route.get('/','ListController.show')
-// Route.get('/login','AuthController.index')
-// Route.port('/login','AuthController')
-//
-// Route.get('/register','RegisterController.index')
-// Route.post('register', 'RegisterController.doRegister')
-
 Route.on('/').render('welcome')
-Route.on('/master').render('master')
+// Route.get('welcome','AuthController.index')
+// Route.port('welcome','AuthController')
+
+// Route.get('/welcome','RegisterController.index')
+// Route.post('welcome', 'RegisterController.doRegister')
+
+
+
 Route.on('/admin').render('admin')
-Route.on('/member').render('member')
+Route.get('/member','ZoneController.member')
 Route.on('/operator').render('operator')
-Route.on('/supir').render('supir')
+// Route.get('/driverIUD', 'UserController.show').as('profile')
+
 Route.resource('driverIUD','DriverController')
 Route.resource('memberIUD','MemberController')
 Route.resource('adminIUD','AdminController')

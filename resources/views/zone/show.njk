@@ -2,7 +2,7 @@
 
 {% block content %}
 <head>
-<title>TABEL ZONE</title>
+<title>TABEL TRANSACTION</title>
 </head>
 <BR>
 	<BR>
@@ -10,16 +10,24 @@
 		<table>
 			<tr>
 				<td style="padding-right: 10px;">
-
     				{{ form.open({ route: 'zoneIUD.edit', params: {id: zone.id} }) }}
     					{{ form.button('Update','', { class: 'btn btn-success '}) }}
     				{{ form.close() }}
 
     			</td>
-    			<td>
+
+    			<td style="padding-right: 20px;">
     				{{ form.open({ route: 'zoneIUD.destroy', params: {id: zone.id} }) }}
     					{{csrfField}}
     					{{ form.button('Delete','', { class: 'btn btn-danger '}) }}
+
+    				{{ form.close() }}
+
+    			</td>
+					<td style="padding-right: 30px;">
+    				{{ form.open({ route: 'zoneIUD.edit', params: {id: zone.id} }) }}
+    					{{csrfField}}
+    					{{ form.button('Edit','', { class: 'btn btn-success '}) }}
 
     				{{ form.close() }}
     			</td>
@@ -49,7 +57,7 @@
 					<th class="col-md-2">Fare</th>
 					<td class="col-md-6">{{ zone.fare}}</td>
 				</tr>
-				
+
 
 
 

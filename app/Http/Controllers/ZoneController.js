@@ -10,6 +10,14 @@ class ZoneController {
     yield response.sendView('zone/index', {zones:zones.toJSON()})
   }
 
+
+    * member(request, response) {
+      const zones = yield Zone.all()
+      yield response.sendView('member', {zones:zones.toJSON()})
+    }
+
+
+
   * create(request, response) {
     yield response.sendView('zone/create')
     yield response.sendView('zone/index', {zones:zones.toJSON()})
@@ -25,11 +33,12 @@ class ZoneController {
     const zone=yield Zone.findBy('id', request.param('id'))
     yield response.sendView('zone/show',{zone:zone.toJSON()})
 
+
   }
 
   * edit(request, response) {
     const zone=yield Zone.findBy('id', request.param('id'))
-    yield response.sendView('zone/show',{zone:zone.toJSON()})
+    yield response.sendView('zone/edit',{zone:zone.toJSON()})
   }
 
   * update(request, response) {

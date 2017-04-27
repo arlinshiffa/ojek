@@ -8,16 +8,17 @@ class AdminsTableSchema extends Schema {
     this.create('admins', (table) => {
       table.increments()
       table.timestamps()
-
-      table.string('name')
-      table.string('number')
+      table.integer('idUser').unsigned().index().references('id').inTable('users')
+      table.string('number').unique()
+      table.string('name', 200).notNullable()
+      
     })
 
 
   }
 
   down () {
-    this.dropIfExits('admins')
+    this.dropIfExists('admins')
   }
 
 }

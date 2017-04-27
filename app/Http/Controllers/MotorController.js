@@ -29,7 +29,7 @@ class MotorController {
 
   * edit(request, response) {
     const motor=yield Motor.findBy('id', request.param('id'))
-    yield response.sendView('motor/show',{motor:motor.toJSON()})
+    yield response.sendView('motor/edit',{motor:motor.toJSON()})
   }
 
   * update(request, response) {

@@ -21,7 +21,7 @@ class TransactionsTableSchema extends Schema {
   }
 
   down () {
-    this.dropIfExits('transactions')
+    this.dropIfExists('transactions')
   }
 
 }

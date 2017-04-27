@@ -29,7 +29,7 @@ class MemberController {
 
   * edit(request, response) {
     const member=yield Member.findBy('id', request.param('id'))
-    yield response.sendView('member/show',{member:member.toJSON()})
+    yield response.sendView('member/edit',{member:member.toJSON()})
   }
 
   * update(request, response) {

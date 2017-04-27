@@ -1,5 +1,5 @@
 <head>
-    <title>Bootstrap Example</title>
+    <title>Member Ojek</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -15,7 +15,7 @@
         /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
 
         .row.content {
-            height: 450px
+            height: 550px
         }
         /* Set gray background color and 100% height */
 
@@ -41,6 +41,17 @@
             .row.content {
                 height: auto;
             }
+        }
+        /* MORE */
+        h1{
+            font-family: 'Boogaloo', cursive;
+        }
+        h2{
+            font-family: 'Ruda', sans-serif;
+        }
+        p1{
+            font-weight:bold;
+            color: brown;
         }
     </style>
 </head>
@@ -69,7 +80,7 @@
         <div class="row content">
             <div class="col-sm-8 text-left">
                 <h1>Selamat Datang, Member!</h1>
-                <p>Disini Anda dapat memesan ojek dengan memasukkan zona tujuan dan wilayah tujuan Anda.</p>
+                <p1>Disini Anda dapat memesan ojek dengan memasukkan zona tujuan dan wilayah tujuan Anda.</p1>
                 <div>
                     </br>
                     <fieldset>
@@ -81,11 +92,9 @@
                                     <div>
                                         <select class="form-control" placeholder=><br/>
                                     <option value="">Silahkan Masukkan Zona Tujuan Anda</option><br/>
-                                    <option value="Z1">Zona 1</option><br/>
-                                    <option value="Z2">Zona 2</option><br/>
-                                    <option value="Z3">Zona 3</option><br/>
-                                    <option value="Z4">Zona 4</option><br/>
-                                    <option value="Z5">Zona 5</option><br/>
+                                    {% for zone in zones %}
+                                    <option value={{zone.name}}>{{zone.name}}</option></br>
+                                    {%endfor%}
                                     <br/>
                                     </select>
                                     </div>
@@ -102,6 +111,7 @@
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
                             <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Pesan</button>
+
                             <!-- Modal -->
                             <div class="modal fade" id="myModal" role="dialog">
                                 <div class="modal-dialog">

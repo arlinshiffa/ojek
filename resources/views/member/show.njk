@@ -10,16 +10,24 @@
 		<table>
 			<tr>
 				<td style="padding-right: 10px;">
-
-    				{{ form.open({ route: 'memberIUD.edit', params: {id: member.id} }) }}
+    				{{ form.open({ route: 'driverIUD.edit', params: {id: driver.id} }) }}
     					{{ form.button('Update','', { class: 'btn btn-success '}) }}
     				{{ form.close() }}
 
     			</td>
-    			<td>
-    				{{ form.open({ route: 'memberIUD.destroy', params: {id: member.id} }) }}
+
+    			<td style="padding-right: 20px;">
+    				{{ form.open({ route: 'driverIUD.destroy', params: {id: driver.id} }) }}
     					{{csrfField}}
     					{{ form.button('Delete','', { class: 'btn btn-danger '}) }}
+
+    				{{ form.close() }}
+
+    			</td>
+					<td style="padding-right: 30px;">
+    				{{ form.open({ route: 'driverIUD.edit', params: {id: driver.id} }) }}
+    					{{csrfField}}
+    					{{ form.button('Edit','', { class: 'btn btn-success '}) }}
 
     				{{ form.close() }}
     			</td>

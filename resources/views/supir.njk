@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Bootstrap Example</title>
+    <title>Supir Ojek</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style>
@@ -17,7 +18,7 @@
         /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
         
         .row.content {
-            height: 450px
+            height: 550px
         }
         /* Set gray background color and 100% height */
         
@@ -41,9 +42,34 @@
                 padding: 15px;
             }
             .row.content {
-                height: auto;
+                height: auto;                
             }
         }
+        .table.table-bordered{
+            background-color: #f1f1f1;
+        }
+         /* MORE */
+        h1{
+            font-family: 'Boogaloo', cursive;           
+        }
+        h2{
+            font-family: 'Ruda', sans-serif;  
+        }
+        p1{
+            font-weight:bold;
+            color: brown;
+        }        
+        .well{
+            font-weight: bold;
+            color: black;
+        }   
+        thead{
+            background-color: darkgrey;
+            color : white;
+        }   
+        .sidenav{            
+            background-color:darkseagreen;
+        }        
     </style>
 </head>
 
@@ -75,7 +101,7 @@
                     <div>
                         <table class="table table-bordered">
                             <thead>
-                                <tr>
+                                <tr>                                    
                                     <th>Rp  </th>
                                 </tr>
                                 </thread>
@@ -83,7 +109,7 @@
                     </div>
                 </div>
 
-                <div class="well">Pendapatan Bulasn Ini
+                <div class="well">Pendapatan Bulan Ini
                     </br>
                     <div>
                         <table class="table table-bordered">
@@ -99,12 +125,12 @@
             </div>
             <div class="col-sm-8 text-left">
                 <h1>Selamat Datang, Driver!</h1>
-                <p>Disini Anda dapat melihat transaksi, pendapatan yang masuk hari ini dan bulan ini.</p>
+                <p1>Disini Anda dapat melihat transaksi, pendapatan yang masuk hari ini dan bulan ini.</p1>
                 <hr>
                 <div class="container">
-                    <h2>HISTORI TRANSAKSI</h2>
+                    <h2><i class="fa fa-bar-chart" style="font-size:24px"></i> HISTORI TRANSAKSI </h2>
                     <table class="table table-bordered">
-                        <thead>
+                        <thead id="tabelTransaksi">
                             <tr>
                                 <th>ID Transaksi</th>
                                 <th>Tarif</th>

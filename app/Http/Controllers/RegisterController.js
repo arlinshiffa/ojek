@@ -5,14 +5,18 @@ const Hash = use('Hash')
 
 class RegisterController {
     * index(request, response) {
-        yield response.sendView('register')
+        yield response.sendView('welcome.register')
     }
 
     * doRegister(request, response) {
         const user = new User()
-        user.username = request.input('name')
-        user.email = request.input('email')
+
+        user.username = request.input('username')
+        user.KTP= request.input('KTP')
+        user.email = request.email('email')
         user.password = yield Hash.make(request.input('password'))
+        user.number = request.input('number')
+
 
         yield user.save()
 
@@ -20,7 +24,7 @@ class RegisterController {
             success: 'Registration Successful! Now go ahead and login'
         }
 
-        yield response.sendView('register', { registerMessage : registerMessage })
+        yield response.sendView('welcome register', { registerMessage : registerMessage })
     }
 }
 

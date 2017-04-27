@@ -27,9 +27,14 @@ class DriverController {
 
   }
 
+  * memberpilihZona(request, response) {
+    const zones = yield Zone.all()
+    yield response.sendView('member', {zones:zones.toJSON()})
+  }
+
   * edit(request, response) {
     const driver=yield Driver.findBy('id', request.param('id'))
-    yield response.sendView('driver/show',{driver:driver.toJSON()})
+    yield response.sendView('driver/edit',{driver:driver.toJSON()})
   }
 
   * update(request, response) {

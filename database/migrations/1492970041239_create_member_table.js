@@ -8,20 +8,19 @@ class MembersTableSchema extends Schema {
     this.create('members', (table) => {
       table.increments()
       table.timestamps()
-      table.string('KTP', 16)
+      table.integer('idUser').unsigned().index().references('id').inTable('users')
+      table.string('KTP', 20).unique()
 
 
 
-      table.string('email')
-      table.string('number')
-      table.string('name')
+
 
   })
 
 }
 
   down () {
-    this.dropIfExits('members')
+    this.dropIfExists('members')
   }
 
 }

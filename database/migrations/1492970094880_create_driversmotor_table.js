@@ -22,7 +22,7 @@ class DriversMotorTableSchema extends Schema {
   }
 
   down () {
-    this.dropIfExits('driversMotor')
+    this.dropIfExists('driversMotor')
   }
 
 }

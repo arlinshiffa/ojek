@@ -29,7 +29,7 @@ class OperatorController {
 
   * edit(request, response) {
     const operator=yield Operator.findBy('id', request.param('id'))
-    yield response.sendView('operator/show',{operator:operator.toJSON()})
+    yield response.sendView('operator/edit',{operator:operator.toJSON()})
   }
 
   * update(request, response) {

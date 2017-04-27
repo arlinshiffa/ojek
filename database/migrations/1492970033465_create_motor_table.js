@@ -8,7 +8,7 @@ class MotorsTableSchema extends Schema {
     this.create('motors', (table) => {
       table.increments()
       table.timestamps()
-      table.string('licensePlate')
+      table.string('licensePlate').unique()
       table.string('color')
       table.string('type')
 
@@ -16,7 +16,7 @@ class MotorsTableSchema extends Schema {
   }
 
   down () {
-    this.dropIfExits('motors')
+    this.dropIfExists('motors')
   }
 
 }

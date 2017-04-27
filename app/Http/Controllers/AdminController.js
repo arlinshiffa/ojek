@@ -29,7 +29,7 @@ class AdminController {
 
   * edit(request, response) {
     const admin=yield Admin.findBy('id', request.param('id'))
-    yield response.sendView('admin/show',{admin:admin.toJSON()})
+    yield response.sendView('admin/edit',{admin:admin.toJSON()})
   }
 
   * update(request, response) {
