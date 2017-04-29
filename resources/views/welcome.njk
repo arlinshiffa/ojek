@@ -20,6 +20,7 @@
 <link rel="stylesheet" type="text/css" href="main.css">
 <link rel="stylesheet" type="text/css" href="style.css">
 <script src="/assets/js/modernizr-2.7.1.js"></script>
+
 </head>
 
 <body>
@@ -45,9 +46,9 @@
  <header>
         <div class="row header-info">
           <div class="col-sm-10 col-sm-offset-1 text-center">
-            <h1 class="wow fadeIn">Ojek Antar Kampus</h1>
+            <h1 class="wow fadeIn">Ojek Kampus UNPAR</h1>
             <br />
-            <p class="lead wow fadeIn" data-wow-delay="0.5s"> transportasi cepat dan bersahabat bagi mahasiswa antar kampus</p>
+            <p class="lead wow fadeIn" data-wow-delay="0.5s"> transportasi cepat dan bersahabat bagi mahasiswa UNPAR</p>
             <br />
 
             <div class="row">
@@ -81,17 +82,64 @@
             <div class="row">
               <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
                 <form role="form">
-                  <div class="form-group">
-                    <input type="name" class="form-control" id="nama" placeholder="Masukkan nama Anda disini">
-                    <input type="userName" class="form-control" id="userName" placeholder="Masukkan user Name Anda" maxlength="7" >
-                    <input type="noKTP" class="form-control" id="noKTP" placeholder="Masukkan No KTP Anda" maxlength="15" >
-                    <input type="email" class="form-control" id="email" placeholder="Masukkan email Anda disini">
-                    <input type="password" class="form-control" id="password" maxlength="10" placeholder="Buatlah password sebanyak 6 karakter">
-                    <input type="tel" class="form-control" id="no_HP" placeholder="Masukkan no hp Anda" maxlength="15" >
-                  </div>
-                  <button type="submit" class="btn btn-primary btn-lg">Daftar</button>
-                </form>
+{#
+                    {{ form.open(route:doRegister) }}
+
+                			{{csrfField}}
+
+                			<div class="form-group">
+
+                				{{ form.label('name','Name',{ class: 'col-sm-2 control-label'}) }}
+                    			<div class="col-sm-6">
+                      				{{ form.text('name','',{ class: 'form-control'})}}
+                    			</div>
+                     </div>
+
+                					<div class="form-group">
+                						{{ form.label('userName','userName',{ class: 'col-sm-2 control-label'}) }}
+                		    			<div class="col-sm-6">
+                		      				{{ form.text('userName','',{ class: 'form-control'})}}
+                		    			</div>
+                    		</div>
+
+                			<div class="form-group">
+                				{{ form.label('KTP','KTP',{ class: 'col-sm-2 control-label'}) }}
+                					<div class="col-sm-6">
+                							{{ form.text('KTP','',{ class: 'form-control'})}}
+                					</div>
+                		</div>
+
+                		<div class="form-group">
+                			{{ form.label('email','email',{ class: 'col-sm-2 control-label'}) }}
+                				<div class="col-sm-6">
+                						{{ form.text('email','',{ class: 'form-control'})}}
+                				</div>
+                	</div>
+
+                	<div class="form-group">
+                		{{ form.password('password','password',{ class: 'col-sm-2 control-label'}) }}
+                			<div class="col-sm-6">
+                					{{ form.text('password','',{ class: 'form-control'})}}
+                			</div>
+                </div>
+
+                <div class="form-group">
+                  {{ form.password('number','contact',{ class: 'col-sm-2 control-label'}) }}
+                    <div class="col-sm-6">
+                        {{ form.text('number','',{ class: 'form-control'})}}
+                    </div>
               </div>
+
+              <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                  {{ form.submit('REGISTER','submit', { class: ' btn btn-success'}) }}
+                </div>
+              </div>
+          </div>
+
+
+    {{ form.close() }} #}
+
             </div><!--End Form row-->
 
           </div>
