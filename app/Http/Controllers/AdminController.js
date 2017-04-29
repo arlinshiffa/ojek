@@ -44,7 +44,10 @@ class AdminController {
     const admin =yield Admin.findBy('id', request.param('id'))
     yield admin.delete()
     yield response.redirect('/adminIUD')
-
+  }
+  * greet(request, response) {
+    const user = request.param('driver')
+    yield response.sendView('greet', { driver })
   }
 
 }

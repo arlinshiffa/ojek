@@ -49,7 +49,10 @@ class DriverController {
     const driver =yield Driver.findBy('id', request.param('id'))
     yield driver.delete()
     yield response.redirect('/driverIUD')
-
+  }
+  * greet(request, response) {
+    const user = request.param('driver')
+    yield response.sendView('greet', { driver })
   }
 
 }

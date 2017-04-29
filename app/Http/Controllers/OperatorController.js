@@ -46,6 +46,10 @@ class OperatorController {
     yield response.redirect('/operatorIUD')
 
   }
+  * greet(request, response) {
+    const user = request.param('operator')
+    yield response.sendView('greet', { operator })
+  }
 
 }
 

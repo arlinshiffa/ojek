@@ -3,6 +3,7 @@
 
 const Member= use('App/Model/Member')
 
+
 class MemberController {
 
   * index(request, response) {
@@ -45,6 +46,10 @@ class MemberController {
     yield member.delete()
     yield response.redirect('/memberIUD')
 
+  }
+  * greet(request, response) {
+    const user = request.param('member')
+    yield response.sendView('greet', { member })
   }
 
 }
