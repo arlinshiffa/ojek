@@ -28,7 +28,7 @@ Route.on('/').render('welcome')
 
 
 Route.on('/admin').render('admin')
-Route.get('/member','ZoneController.member')
+Route.resource('member','ChooseZoneController')
 Route.on('/operator').render('operator')
 Route.on('/driver').render('driver')
 

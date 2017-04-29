@@ -3,9 +3,9 @@
 const Zone = use('App/Model/Zone')
 class ChooseZoneController {
 
-  * member(request, response) {
+  * index(request, response) {
     const zones = yield Zone.all()
-    yield response.sendView('zone/member', {zones:zones.toJSON()})
+    yield response.sendView('member', {zones:zones.toJSON()})
   }
 }
 
