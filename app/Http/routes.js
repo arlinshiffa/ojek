@@ -17,7 +17,7 @@
 
 const Route = use('Route')
 
-Route.on('/').render('welcome','RegisterController.doRegister')
+
 // Route.resource('home','RegisterController')
 // Route.get('welcome','AuthController.index')
 // Route.port('welcome','AuthController')
@@ -26,7 +26,7 @@ Route.on('/').render('welcome','RegisterController.doRegister')
 // Route.post('welcome', 'RegisterController.doRegister')
 
 
-
+Route.resource('welcome', 'RegisterController')
 Route.on('/admin').render('admin')
 Route.on('/supir').render('supir')
 Route.resource('member','ChooseZoneController')
