@@ -1,0 +1,83 @@
+{% extends 'master' %}
+
+{% block content %}
+<head>
+<title>TABEL TRANSACTION</title>
+</head>
+	<div class="col-md-8 col-md-offset-2">
+		<div class="col-md-offset-2">
+		{% if successMessage %}
+			<div class="alert alert-success alert-dismissable">
+				<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+				<strong>Success!</strong> {{successMessage}}.
+			</div>
+		{% endif %}
+
+		{% if old('errors') %}
+			<div class="alert alert-danger alert-dismissable">
+				{% for error in old('errors') %}
+					<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+					<li> {{ error.message }} </li>
+				{% endfor %}
+			</div>
+
+		{% endif %}
+
+	<br>
+  <br>
+	<h3>Input new Transaction</h3>
+	<br>
+		</div>
+		<div class="form-horizontal">
+		{{ form.open({route: 'transactionIUD.store'}) }}
+
+			{{csrfField}}
+
+			<div class="form-group">
+				{{ form.label('idMember','ID Member',{ class: 'col-sm-2 control-label'}) }}
+    			<div class="col-sm-6">
+      				{{ form.text('idMember','',{ class: 'form-control'})}}
+    			</div>
+     </div>
+
+					<div class="form-group">
+						{{ form.label('fare','fare',{ class: 'col-sm-2 control-label'}) }}
+		    			<div class="col-sm-6">
+		      				{{ form.text('fare','',{ class: 'form-control'})}}
+		    			</div>
+    		</div>
+
+			<div class="form-group">
+				{{ form.label('idOperator','ID Operator',{ class: 'col-sm-2 control-label'}) }}
+					<div class="col-sm-6">
+							{{ form.text('idOPerator','',{ class: 'form-control'})}}
+					</div>
+		</div>
+
+		<div class="form-group">
+			{{ form.label('idZone','ID Zone',{ class: 'col-sm-2 control-label'}) }}
+				<div class="col-sm-6">
+						{{ form.text('idZone','',{ class: 'form-control'})}}
+				</div>
+	</div>
+
+	<div class="form-group">
+		{{ form.label('idDriver','ID Driver',{ class: 'col-sm-2 control-label'}) }}
+			<div class="col-sm-6">
+					{{ form.text('idDriver','',{ class: 'form-control'})}}
+			</div>
+</div>
+
+				    		<div class="form-group">
+				    			<div class="col-sm-offset-2 col-sm-10">
+				    				{{ form.submit('Create','submit', { class: ' btn btn-success'}) }}
+				    			</div>
+				    		</div>
+				    </div>
+
+
+    	{{ form.close() }}
+		</div>
+	</div>
+
+{% endblock %}

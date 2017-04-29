@@ -9,8 +9,6 @@ class TransactionsTableSchema extends Schema {
       table.increments()
       table.timestamps()
       table.integer('fare')
-      table.time('time')
-      table.date('date')
       table.integer('idMember').unsigned().index().references('id').inTable('members')
       table.integer('idOperator').unsigned().index().references('id').inTable('operators')
       table.integer('idZone').unsigned().index().references('id').inTable('zones')

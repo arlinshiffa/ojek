@@ -17,7 +17,7 @@
     				{{ form.close() }}
 
     			</td>
-			
+
     			<td style="padding-right: 20px;">
     				{{ form.open({ route: 'driverIUD.destroy', params: {id: driver.id} }) }}
     					{{csrfField}}
@@ -62,6 +62,10 @@
         <tr>
 					<th class="col-md-2">SIM</th>
 					<td class="col-md-6">{{ driver.SIM }}</td>
+				</tr>
+				<tr>
+					<th class="col-md-2">Number</th>
+					<td class="col-md-6">{{ driver.number}}</td>
 				</tr>
 
 

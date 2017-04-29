@@ -1,6 +1,7 @@
 {% extends 'master' %}
 
 {% block content %}
+<title>TABEL DRIVER</title>
 </br>
 	<div class="col-md-8 col-md-offset-2">
 		<div class="col-md-offset-2">
@@ -34,6 +35,14 @@
       				{{ form.text('name',drivers.name,{ class: 'form-control'})}}
     			</div>
     		</div>
+
+				<div class="form-group">
+					{{ form.label('number','No Telp',{ class: 'col-sm-2 control-label'}) }}
+	    			<div class="col-sm-6">
+	      				{{ form.text('number',drivers.name,{ class: 'form-control'})}}
+	    			</div>
+	    		</div>
+
 
     		<div class="form-group">
 				{{ form.label('SIM','SIM',{ class: 'col-sm-2 control-label'}) }}

@@ -17,7 +17,8 @@
 
 const Route = use('Route')
 
-Route.on('/').render('welcome')
+Route.on('/').render('welcome','RegisterController.doRegister')
+// Route.resource('home','RegisterController')
 // Route.get('welcome','AuthController.index')
 // Route.port('welcome','AuthController')
 
@@ -28,9 +29,15 @@ Route.on('/').render('welcome')
 
 
 Route.on('/admin').render('admin')
+Route.on('/supir').render('supir')
 Route.resource('member','ChooseZoneController')
+<<<<<<< HEAD
 Route.on('/operator').render('operator')
 Route.on('/driver').render('driver')
+=======
+Route.resource('operator','RekamTransaksiController')
+
+>>>>>>> refs/remotes/origin/master
 
 // Route.get('/driverIUD', 'UserController.show').as('profile')
 

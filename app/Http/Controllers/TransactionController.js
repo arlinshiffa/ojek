@@ -8,11 +8,12 @@ class TransactionController {
   * index(request, response) {
     const transactions = yield Transaction.all()
     yield response.sendView('transaction/index', {transactions:transactions.toJSON()})
+
   }
 
   * create(request, response) {
     yield response.sendView('transaction/create')
-    yield response.sendView('transaction/edit', {transactions:transactions.toJSON()})
+    yield response.sendView('transaction/index', {transactions:transactions.toJSON()})
   }
 
   * store(request, response) {

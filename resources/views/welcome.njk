@@ -7,6 +7,7 @@
   <title>Ojek Antar Kampus | Home</title>
 
   <meta property="og:title" content="">
+<<<<<<< HEAD
   <meta property="og:type" content="website">
   <meta property="og:url" content="">
   <meta property="og:site_name" content="">
@@ -24,6 +25,24 @@
   <script src="/assets/js/modernizr-2.7.1.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
     crossorigin="anonymous">
+=======
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="">
+	<meta property="og:site_name" content="">
+	<meta property="og:description" content="">
+
+<!-- Styles -->
+<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,300,600,700,900' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="animate.css">
+<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="main.css">
+<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="main.css">
+<link rel="stylesheet" type="text/css" href="style.css">
+<script src="/assets/js/modernizr-2.7.1.js"></script>
+
+>>>>>>> refs/remotes/origin/master
 </head>
 
 <body>
@@ -47,6 +66,7 @@
     </div>
   </div>
 
+<<<<<<< HEAD
   <header>
     <div class="row header-info">
       <div class="col-sm-10 col-sm-offset-1 text-center">
@@ -54,6 +74,15 @@
         <br />
         <p class="lead wow fadeIn" data-wow-delay="0.5s"> transportasi cepat dan bersahabat bagi mahasiswa antar kampus</p>
         <br />
+=======
+ <header>
+        <div class="row header-info">
+          <div class="col-sm-10 col-sm-offset-1 text-center">
+            <h1 class="wow fadeIn">Ojek Kampus UNPAR</h1>
+            <br />
+            <p class="lead wow fadeIn" data-wow-delay="0.5s"> transportasi cepat dan bersahabat bagi mahasiswa UNPAR</p>
+            <br />
+>>>>>>> refs/remotes/origin/master
 
         <div class="row">
           <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
@@ -68,6 +97,84 @@
             <!--End Button Row-->
           </div>
         </div>
+<<<<<<< HEAD
+=======
+      </div>
+    </header>
+    <!--Pendaftaran-->
+    <section id="register" class="pad-lg light-gray-bg">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8 col-sm-offset-2 text-center">
+            <i class="fa fa-envelope-o margin-40"></i>
+            <h2 class="black">Form Pendaftaran</h2>
+            <br />
+            <p class="black">Dapatkan seluruh kemudahan yang kami sediakan.</p>
+            <br />
+
+            <div class="row">
+              <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+                <form role="form">
+{#
+                    {{ form.open(route:doRegister) }}
+
+                			{{csrfField}}
+
+                			<div class="form-group">
+
+                				{{ form.label('name','Name',{ class: 'col-sm-2 control-label'}) }}
+                    			<div class="col-sm-6">
+                      				{{ form.text('name','',{ class: 'form-control'})}}
+                    			</div>
+                     </div>
+
+                					<div class="form-group">
+                						{{ form.label('userName','userName',{ class: 'col-sm-2 control-label'}) }}
+                		    			<div class="col-sm-6">
+                		      				{{ form.text('userName','',{ class: 'form-control'})}}
+                		    			</div>
+                    		</div>
+
+                			<div class="form-group">
+                				{{ form.label('KTP','KTP',{ class: 'col-sm-2 control-label'}) }}
+                					<div class="col-sm-6">
+                							{{ form.text('KTP','',{ class: 'form-control'})}}
+                					</div>
+                		</div>
+
+                		<div class="form-group">
+                			{{ form.label('email','email',{ class: 'col-sm-2 control-label'}) }}
+                				<div class="col-sm-6">
+                						{{ form.text('email','',{ class: 'form-control'})}}
+                				</div>
+                	</div>
+
+                	<div class="form-group">
+                		{{ form.password('password','password',{ class: 'col-sm-2 control-label'}) }}
+                			<div class="col-sm-6">
+                					{{ form.text('password','',{ class: 'form-control'})}}
+                			</div>
+                </div>
+
+                <div class="form-group">
+                  {{ form.password('number','contact',{ class: 'col-sm-2 control-label'}) }}
+                    <div class="col-sm-6">
+                        {{ form.text('number','',{ class: 'form-control'})}}
+                    </div>
+              </div>
+
+              <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                  {{ form.submit('REGISTER','submit', { class: ' btn btn-success'}) }}
+                </div>
+              </div>
+          </div>
+
+
+    {{ form.close() }} #}
+
+            </div><!--End Form row-->
+>>>>>>> refs/remotes/origin/master
 
       </div>
     </div>

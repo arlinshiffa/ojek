@@ -9,11 +9,11 @@ class DriversTableSchema extends Schema {
       table.increments()
       table.timestamps()
       table.boolean('status').defaultTo(false)
-      table.string('SIM', 12).unique()
+      table.string('SIM', 20).unique()
       table.integer('idUser').unsigned().index().references('id').inTable('users')
       table.string('number').unique()
       table.string('name', 200).notNullable()
-      
+
 
     })
 

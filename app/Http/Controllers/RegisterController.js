@@ -2,30 +2,43 @@
 
 const User = use('App/Model/User')
 const Hash = use('Hash')
+// const Validator = use('Validator')
 
 class RegisterController {
-    * index(request, response) {
-        yield response.sendView('welcome.register')
-    }
+  * index(request, response) {
+    const users = yield User.all()
+    yield response.sendView('welcome')
+  }
 
-    * doRegister(request, response) {
-        const user = new User()
+  *create(request, response){
+    const users = yield User.all()
+    yield response.sendView('welcome',{users:users.toJSON()})
+  }
 
-        user.username = request.input('username')
-        user.KTP= request.input('KTP')
-        user.email = request.email('email')
-        user.password = yield Hash.make(request.input('password'))
-        user.number = request.input('number')
+  * doRegister(request, response) {
+    const userData =  request.except('_csrf','submit')
+    // const validation = yield Validator.validate(userData, User.rules)
+    // if(validation.fails()){
+    //   yield request
+    //   .withOnly('name','userName','KTP','email','password','number')
+    //   .andWith({error:validation.messages()})
+    //   .flash()
+    //   response.redirect('welcome')
+    //   return
+    // }
+    yield User.create(userData)
+    yield response.sendView('welcome',{successMessage:'Created User Successfully'})
+  }
 
+  //
+  // yield user.save()
 
-        yield user.save()
+  // var registerMessage = {
+  //   success: 'Registration Successful! Now go ahead and login'
+  // }
 
-        var registerMessage = {
-            success: 'Registration Successful! Now go ahead and login'
-        }
-
-        yield response.sendView('welcome register', { registerMessage : registerMessage })
-    }
+//   yield response.sendView('welcome register', { registerMessage : registerMessage })
+// }
 }
 
 module.exports = RegisterController

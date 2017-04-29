@@ -1,6 +1,5 @@
-
-
 <head>
+<<<<<<< HEAD
     <title>Member Ojek</title>    
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -178,11 +177,198 @@
                         </div>
                         </form>
                     </div>
-                </div>
-            </div>
+=======
+  <title>Member Ojek</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {
+      height: 550px;
+    }
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {
+        height: auto;
+      }
+    }
+    /* MORE */
+    h1 {
+      font-family: 'Boogaloo', cursive;
+    }
+    h2 {
+      font-family: 'Ruda', sans-serif;
+    }
+    p1 {
+      font-weight: bold;
+      color: brown;
+    }
+
+  </style>
+</head>
+<header>
+  <body>
+
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand">Halaman Utama Member</a>
         </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a href="#">
+                <span class="glyphicon glyphicon-log-in"></span>
+                Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid text-center">
+      <div class="row content">
+        <div class="col-sm-8 text-left">
+          <h1>Selamat Datang, Member!</h1>
+          <p1>Disini Anda dapat memesan ojek dengan memasukkan zona tujuan dan wilayah tujuan Anda.</p1>
+          <div></br>
+          <fieldset>
+            <legend>Pesan Layanan</legend>
+            <form class="form-horizontal">
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="name">Zona :</label>
+                <div class="col-sm-10">
+                  <div>
+                    <select class="form-control" placeholder=><br/>
+                      <option value="">Silahkan Masukkan Zona Tujuan Anda</option>
+                      <br>
+                        {% for zone in zones %}
+                          <option value={{zone.name}}>{{zone.name}}</option>
+                        </br>
+                        {%endfor%}
+                        <br/>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="control-label col-sm-2" for="name">Wilayah:</label>
+                  <div class="col-sm-10">
+                    <input type="name" class="form-control" id="name" placeholder="Masukkan detail jalan tujuan Anda">
+                  </div>
+                </div>
+              </fieldset>
+              <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Pesan</button>
+
+                  <!-- Modal -->
+                  <div class="modal fade" id="myModal" role="dialog">
+                    <div class="modal-dialog">
+
+                      <!-- Modal content-->
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close" data-dismiss="modal">&times;</button>
+                          <h4 class="modal-title">Selamat Pesanan Anda Berhasil!</h4>
+                        </div>
+                        <div class="modal-body">
+                          <p>Anda akan diantarkan supir kami, detail transaksi :</p>
+                        </br>
+                        <table class="table table-user-information">
+                          <tbody>
+                            <tr>
+                              <td>ID Transaksi
+                              </td>
+                              <td>
+                                #1234
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>Nama Supir
+                              </td>
+                              <td>
+                                Supir 1
+                              </td>
+                            </tr>
+
+                            <tr>
+                              <td>Zona
+                              </td>
+                              <td>
+                                Z1
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>Wilayah
+                              </td>
+                              <td>
+                                Jalan Merah No.1
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>TARIF
+                              </td>
+                              <td>
+                                Rp 8.000,00
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                      </div>
+                    </div>
+
+                  </div>
+>>>>>>> refs/remotes/origin/master
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+<<<<<<< HEAD
         <footer class="container-fluid text-center">
             <p>Oke Ojeg</p>
         </footer>
+=======
+      </div>
+    </div>
+  </div>
+  <footer class="container-fluid text-center">
+    <p>Oke Ojeg</p>
+  </footer>
+>>>>>>> refs/remotes/origin/master
 </header>
 </body>
