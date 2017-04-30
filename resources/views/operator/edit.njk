@@ -24,21 +24,35 @@
 </br>
 
 		<div class="form-horizontal">
-		{{ form.open({ route: 'driverIUD.update', params: {id: operators.id} }) }}
+		{{ form.open({ route: 'operatorIUD.update', params: {id: operator.id} }) }}
 
 			{{csrfField}}
 
 			<div class="form-group">
 				{{ form.label('name','Nama Operator',{ class: 'col-sm-2 control-label'}) }}
     			<div class="col-sm-6">
-      				{{ form.text('name',operators.name,{ class: 'form-control'})}}
+      				{{ form.text('name',operator.name,{ class: 'form-control'})}}
     			</div>
     		</div>
+
+				<div class="form-group">
+					{{ form.label('userName','User Name',{ class: 'col-sm-2 control-label'}) }}
+						<div class="col-sm-6">
+								{{ form.text('userName',user.userName,{ class: 'form-control'})}}
+						</div>
+					</div>
+
+					<div class="form-group">
+						{{ form.label('password','password',{ class: 'col-sm-2 control-label'}) }}
+							<div class="col-sm-6">
+									{{ form.password('password',user.password,{ class: 'form-control'})}}
+							</div>
+						</div>
 
     		<div class="form-group">
 				{{ form.label('number','number',{ class: 'col-sm-2 control-label'}) }}
     			<div class="col-sm-6">
-      				{{ form.text('number',operators.number,{ class: 'form-control'})}}
+      				{{ form.text('number',operator.number,{ class: 'form-control'})}}
     			</div>
     		</div>
 
@@ -46,7 +60,7 @@
 
     		<div class="form-group">
     			<div class="col-sm-offset-2 col-sm-10">
-    				{{ form.submit('Update','submit', { class: ' btn btn-success'}) }}
+    				{{ form.submit('Update','submit', { class: ' btn btn-primary'}) }}
     			</div>
     		</div>
     	{{ form.close() }}

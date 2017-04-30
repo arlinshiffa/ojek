@@ -32,14 +32,28 @@
 			<div class="form-group">
 				{{ form.label('name','driver Name',{ class: 'col-sm-2 control-label'}) }}
     			<div class="col-sm-6">
-      				{{ form.text('name',drivers.name,{ class: 'form-control'})}}
+      				{{ form.text('name',driver.name,{ class: 'form-control'})}}
     			</div>
     		</div>
 
 				<div class="form-group">
+					{{ form.label('userName','User Name',{ class: 'col-sm-2 control-label'}) }}
+						<div class="col-sm-6">
+								{{ form.text('userName',user.userName,{ class: 'form-control'})}}
+						</div>
+					</div>
+
+					<div class="form-group">
+						{{ form.label('password','password',{ class: 'col-sm-2 control-label'}) }}
+							<div class="col-sm-6">
+									{{ form.password('password',user.password,{ class: 'form-control'})}}
+							</div>
+						</div>
+
+				<div class="form-group">
 					{{ form.label('number','No Telp',{ class: 'col-sm-2 control-label'}) }}
 	    			<div class="col-sm-6">
-	      				{{ form.text('number',drivers.name,{ class: 'form-control'})}}
+	      				{{ form.text('number',driver.name,{ class: 'form-control'})}}
 	    			</div>
 	    		</div>
 
@@ -47,7 +61,7 @@
     		<div class="form-group">
 				{{ form.label('SIM','SIM',{ class: 'col-sm-2 control-label'}) }}
     			<div class="col-sm-6">
-      				{{ form.text('SIM',drivers.SIM,{ class: 'form-control'})}}
+      				{{ form.text('SIM',driver.SIM,{ class: 'form-control'})}}
     			</div>
     		</div>
 
@@ -58,10 +72,37 @@
     			</div>
     		</div>
 
+				<div class="form-group">
+				{{ form.label('licensePlate','licensePlate',{ class: 'col-sm-2 control-label'}) }}
+					<div class="col-sm-6">
+							{{ form.text('licensePlate',driver.status,{ class: 'form-control'})}}
+					</div>
+				</div>
+
+				<div class="form-group">
+				{{ form.label('color','color',{ class: 'col-sm-2 control-label'}) }}
+					<div class="col-sm-6">
+							{{ form.text('color',driver.status,{ class: 'form-control'})}}
+					</div>
+				</div>
+
+				<div class="form-group">
+				{{ form.label('type','type',{ class: 'col-sm-2 control-label'}) }}
+					<div class="col-sm-6">
+							{{ form.text('type',driver.status,{ class: 'form-control'})}}
+					</div>
+				</div>
+
+				<div class="form-group">
+				{{ form.label('color','color',{ class: 'col-sm-2 control-label'}) }}
+					<div class="col-sm-6">
+							{{ form.text('color',driver.status,{ class: 'form-control'})}}
+					</div>
+				</div>
 
     		<div class="form-group">
     			<div class="col-sm-offset-2 col-sm-10">
-    				{{ form.submit('Update','submit', { class: ' btn btn-success'}) }}
+    				{{ form.submit('Update','submit', { class: ' btn btn-primary'}) }}
     			</div>
     		</div>
     	{{ form.close() }}
