@@ -1,0 +1,57 @@
+{% extends 'master' %}
+
+{% block content %}
+<head>
+<title>TABEL DRIVER</title>
+</head>
+<BR>
+	<BR>
+	<div class="col-md-8 col-md-offset-2">
+	</br>
+</br>
+		<table>
+			<tr>
+				<td style="padding-right: 10px;">
+    				{{ form.open({ route: 'userIUD.edit', params: {id: user.id} }) }}
+    					{{ form.button('Update','', { class: 'btn btn-primary '}) }}
+    				{{ form.close() }}
+
+    			</td>
+    		</tr>
+		</table>
+		<br>
+		<br>
+		<table class="table table-striped">
+			<tbody>
+				<tr>
+					<th class="col-md-2">id</td>
+					<td class="col-md-6">{{ user.id }}</td>
+				</tr>
+				<tr>
+					<th class="col-md-2">Create Date</th>
+					<td class="col-md-6">{{ user.created_at }}</td>
+				</tr>
+				<tr>
+					<th class="col-md-2">Update Date</th>
+					<td class="col-md-6">{{ user.updated_at }}</td>
+				</tr>
+				<tr>
+					<th class="col-md-2">User Name</th>
+					<td class="col-md-6">{{ user.name }}</td>
+				</tr>
+				<tr>
+					<th class="col-md-2">Role</th>
+					<td class="col-md-6">{{ user.role }}</td>
+				</tr>
+        <tr>
+					<th class="col-md-2">Password</th>
+					<td class="col-md-6">{{ user.password}}</td>
+				</tr>
+				
+
+
+			</tbody>
+		</table>
+	</div>
+
+{% endblock %}

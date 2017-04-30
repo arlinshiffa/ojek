@@ -1,0 +1,42 @@
+{% extends 'master' %}
+
+{% block content %}
+<head>
+<title>TABEL USER</title>
+</head>
+<div class="col-md-12 col-md-offset-0">
+<h3><b>TABEL USER</b></h3>
+</br>
+</br>
+
+        {{form.open({route:'userIUD.create'})}}
+            {{form.button('Create','',{class:'btn btn-primary'})}}
+        {{form.close()}}
+
+        <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Create Date</th>
+		        <th>Update Date</th>
+		        <th>User Name</th>
+					  <th>Role</th>
+            <th>Password</th>
+          </tr>
+        <thead/>
+        <tbody>
+
+        {% for user in users %}
+          <tr>
+            <td>{{user.id}}</td>
+            <td>{{user.created_at }}</td>
+		        <td>{{ user.updated_at }}</td>
+		        <td>{{ user.name}}</td>
+		        <td>{{ user.role }}</td>
+            <td>{{ user.password }}</td>
+            <th><a href="userIUD/{{user.id}}">View</a></th>
+          <tr>
+          {%endfor%}
+          </tbody>
+
+{% endblock %}

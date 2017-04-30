@@ -1,44 +1,35 @@
 'use strict'
 
 const User = use('App/Model/User')
-const Hash = use('Hash')
-const Validator = use('Validator')
+
+const Member = use('App/Model/Member')
 
 class RegisterController {
-  * index(request, response) {
-    const users = yield User.all()
-    yield response.sendView('welcome', {users:users.toJSON()})
-  }
-
-  *create(request, response){
-    const users = yield User.all()
-    yield response.sendView('welcome',{users:users.toJSON()})
-  }
-
-  * doRegister(request, response) {
-    const userData =  request.except('_csrf','submit')
-    const validation = yield Validator.validate(userData, User.rules)
-    if(validation.fails()){
-      yield request
-      .withOnly('name','userName','KTP','email','password','number')
-      .andWith({error:validation.messages()})
-      .flash()
-      response.redirect('welcome')
-      return
+    * index(request, response) {
+        yield response.sendView('register')
     }
-    yield User.create(userData)
-    yield response.sendView('welcome',{successMessage:'Created User Successfully'})
-  }
 
-  //
-  // yield user.save()
+    * doRegister(request, response) {
+        const user = new User()
+        const member = new Member()
+        user.username = request.input('userName')
+        user.password = request.input('password')
+        user.role='1';
+        yield user.save()
+        const userLast = yield User.last()
+        member.KTP= request.input('KTP')
+        member.number= request.input('number')
+        member.email = request.input('email')
+        member.name = request.input('name')
+        member.idUser = userLast.id
 
-  // var registerMessage = {
-  //   success: 'Registration Successful! Now go ahead and login'
-  // }
+        yield member.save()
+        var registerMessage = {
+            success: 'Registration Successful! Now go ahead and login'
+        }
 
-//   yield response.sendView('welcome register', { registerMessage : registerMessage })
-// }
+        yield response.sendView('register', { registerMessage : registerMessage })
+    }
 }
 
 module.exports = RegisterController

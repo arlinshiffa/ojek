@@ -7,6 +7,7 @@ class RekamTransaksiController {
     const transactions = yield Transaction.all()
     yield response.sendView('operator', {transactions:transactions.toJSON()})
   }
+
 }
 
 module.exports = RekamTransaksiController

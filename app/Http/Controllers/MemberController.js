@@ -15,6 +15,12 @@ class MemberController {
     yield response.sendView('member/index', {members:members.toJSON()})
   }
 
+  * login(request, response) {
+    yield response.sendView('member')
+    yield response.sendView('member/index', {members:members.toJSON()})
+  }
+
+
   * store(request, response) {
     const memberData = request.except('_csrf','submit')
     yield Member.create(memberData)

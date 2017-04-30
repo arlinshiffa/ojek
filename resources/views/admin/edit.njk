@@ -24,21 +24,35 @@
 </br>
 
 		<div class="form-horizontal">
-		{{ form.open({ route: 'driverIUD.update', params: {id: admins.id} }) }}
+		{{ form.open({ route: 'adminIUD.update', params: {id: admin.id} }) }}
 
 			{{csrfField}}
 
 			<div class="form-group">
 				{{ form.label('name','Nama Admin',{ class: 'col-sm-2 control-label'}) }}
     			<div class="col-sm-6">
-      				{{ form.text('name',admins.name,{ class: 'form-control'})}}
+      				{{ form.text('name',admin.name,{ class: 'form-control'})}}
     			</div>
     		</div>
+
+				<div class="form-group">
+					{{ form.label('userName','User Name',{ class: 'col-sm-2 control-label'}) }}
+						<div class="col-sm-6">
+								{{ form.text('userName',user.userName,{ class: 'form-control'})}}
+						</div>
+					</div>
+
+					<div class="form-group">
+						{{ form.label('password','password',{ class: 'col-sm-2 control-label'}) }}
+							<div class="col-sm-6">
+									{{ form.password('password',user.password,{ class: 'form-control'})}}
+							</div>
+						</div>
 
     		<div class="form-group">
 				{{ form.label('number','number',{ class: 'col-sm-2 control-label'}) }}
     			<div class="col-sm-6">
-      				{{ form.text('number',admins.number,{ class: 'form-control'})}}
+      				{{ form.text('number',admin.number,{ class: 'form-control'})}}
     			</div>
     		</div>
 

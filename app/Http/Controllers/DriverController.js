@@ -37,6 +37,8 @@ class DriverController {
     const driverData = request.except('_csrf','submit')
     const driver= yield Driver.findBy('id', request.param('id'))
     driver.name = driverData.name
+    driver.SIM = driverData.SIM
+    driver.number = driverData.number
     yield driver.save()
     yield response.redirect(request.param('id'))
   }
