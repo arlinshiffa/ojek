@@ -4,7 +4,7 @@
 const Driver= use('App/Model/Driver')
 const User = use('App/Model/User')
 const Motor = use('App/Model/Motor')
-const DriversMotor =use('App/Model/Motor')
+const DriversMotor =use('App/Model/DriversMotor')
 const Hash = use('Hash')
 
 class DriverController {
@@ -26,17 +26,12 @@ class DriverController {
     const user = new User()
     const driver = new Driver()
     const motor = new Motor()
-    const driversMotor = new driversMotor()
+    const driversMotor = new DriversMotor()
     user.username = request.input('userName')
     user.password = request.input('password')
     user.role='4'
     yield user.save()
     const userLast = yield User.last()
-
-    motor.LicensePlate = request.input('LicensePlate')
-    motor.color = request.input('color')
-    motor.type = request.input('type')
-    yield motor.save()
 
     driver.number= request.input('number')
     driver.SIM = request.input('SIM')
@@ -45,12 +40,20 @@ class DriverController {
     driver.idUser = userLast.id
     yield driver.save()
 
+    motor.licensePlate = request.input('licensePlate')
+    motor.color = request.input('color')
+    motor.type = request.input('type')
+    yield motor.save()
+
+
+
     driversMotor.idMotor = motor.id
     driversMotor.idDriver = driver.id
     driversMotor.LicensePlate= motor.LicensePlate
     driversMotor.color= motor.color
     driversMotor.status= driver.status
     driversMotor.name = driver.name
+    driversMotor.type = motor.type
     driversMotor.SIM = driver.SIM
     yield driversMotor.save()
   }
@@ -75,7 +78,7 @@ class DriverController {
     const userData = request.except('_csrf','submit')
     const user= yield User.findBy('id', driver.idUser)
     const driversMotorData = request.except('_csrf','submit')
-    const driversMotor= yield User.findBy('idDriver', driver.id)
+    const driversMotor= yield DriversMotor.findBy('idDriver', driver.id)
     const motorData = request.except('_csrf','submit')
     const motor= yield User.findBy('id', driversMotor.idMotor)
 
@@ -84,7 +87,7 @@ class DriverController {
     driver.status = driverData.status
     driver.number = driverData.number
 
-    motor.LicensePlate= motorData.LicensePlate
+    motor.licensePlate= motorData.licensePlate
     motor.color=motorData.color
     motor.type=motorData.type
 
@@ -110,7 +113,7 @@ class DriverController {
   * destroy(request, response) {
     const driver =yield Driver.findBy('id', request.param('id'))
     const user = yield User.findBy('id',driver.idUser)
-    const driversMotor= yield User.findBy('idDriver', driver.id)
+    const driversMotor= yield DriversMotor.findBy('idDriver', driver.id)
     const motor= yield User.findBy('id', driversMotor.idMotor)
 
     yield driversMotor.delete()

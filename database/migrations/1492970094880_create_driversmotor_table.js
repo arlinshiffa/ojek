@@ -5,7 +5,7 @@ const Schema = use('Schema')
 class DriversMotorTableSchema extends Schema {
 
   up () {
-    this.create('driversMotor', (table) => {
+    this.create('drivers_motors', (table) => {
       table.increments()
       table.timestamps()
 
@@ -22,7 +22,7 @@ class DriversMotorTableSchema extends Schema {
   }
 
   down () {
-    this.dropIfExists('driversMotor')
+    this.dropIfExists('drivers_motors')
   }
 
 }

@@ -3,6 +3,7 @@
 
 const Admin= use('App/Model/Admin')
 const User = use('App/Model/User')
+const Hash = use('Hash')
 
 class AdminController {
 
