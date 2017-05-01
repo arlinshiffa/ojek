@@ -4,7 +4,7 @@
 const Admin= use('App/Model/Admin')
 const User = use('App/Model/User')
 const Hash = use('Hash')
-
+const Role = use('app/Model/Role')
 class AdminController {
 
   * index(request, response) {
@@ -25,6 +25,7 @@ class AdminController {
     user.password = request.input('password')
     user.role='2';
     yield user.save()
+
     const userLast = yield User.last()
     admin.number= request.input('number')
     admin.name = request.input('name')

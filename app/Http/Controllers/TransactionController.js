@@ -3,19 +3,21 @@ transaction
 
 const Transaction= use('App/Model/Transaction')
 const Member = use('App/Model/Member')
-const Supir = use('App/Model/Supir')
+const Driver = use('App/Model/Driver')
 
 class TransactionController {
 
   * index(request, response) {
     const transaction = yield Transaction.all()
-    const  = yield Member.all()
-    yield response.sendView('operator', {transaction:transaction.toJSON(), member:member.toJSON()})
+    const member = yield Member.all()
+    const driver = yield Driver.all()
+    yield response.sendView('operator', {transaction:transaction.toJSON(), member:member.toJSON(), driver:driver.toJSON()})
   }
 
   * store(request, response) {
     const member = new Member()
     const transaction = new Transaction()
+    const driver = new Driver
     member.membername = request.input('memberName')
     member.password = request.input('password')
     member.role='2';

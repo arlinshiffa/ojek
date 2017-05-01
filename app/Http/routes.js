@@ -49,6 +49,8 @@ Route.resource('motorIUD','MotorController')
 Route.get('/', 'AuthController.index')
 Route.post('/', 'AuthController.login')
 
+
+
 Route.get('/register', 'RegisterController.index')
 Route.post('register', 'RegisterController.doRegister')
 // Route.post('/login', 'LoginController.login')

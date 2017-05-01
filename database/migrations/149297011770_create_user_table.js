@@ -10,7 +10,8 @@ class UsersTableSchema extends Schema {
     //   table.timestamps()
     //   table.string('userName', 30).unique().notNullable()
     //   table.string('password', 100).unique().notNullable()
-    //   table.integer('role').notNullable()
+    //   table.integer('role').unsigned().index().references('id').inTable('roles')
+    //
     // })
 
 
