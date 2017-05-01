@@ -21,8 +21,8 @@ Route.on('/').render('welcome')
 // Route.get('welcome','AuthController.index')
 // Route.port('welcome','AuthController')
 
-Route.get('/register','RegisterController.index')
-Route.post('register', 'RegisterController.doRegister')
+
+
 
 //on = redirect, get = manggil method di dalam, resource = manggil semua method di dlm controller
 
@@ -30,9 +30,11 @@ Route.post('register', 'RegisterController.doRegister')
 Route.on('/admin').render('admin')
 Route.on('/operator').render('operator')
 Route.on('/driver').render('driver')
-Route.on('/register').render('register')
 Route.resource('member','ChooseZoneController')
 // Route.get('/driverIUD', 'UserController.show').as('profile')
+
+
+
 
 Route.resource('userIUD','UserController')
 Route.resource('driverIUD','DriverController')
@@ -44,7 +46,11 @@ Route.resource('userIUD','UserController')
 Route.resource('transactionIUD','TransactionController')
 Route.resource('motorIUD','MotorController')
 
-// Route.post('/register', 'RegisterController.doRegister')
+Route.get('/', 'AuthController.index')
+Route.post('/', 'AuthController.login')
+
+Route.get('/register', 'RegisterController.index')
+Route.post('register', 'RegisterController.doRegister')
 // Route.post('/login', 'LoginController.login')
 
 

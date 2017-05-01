@@ -6,7 +6,7 @@ const Hash = use('Hash')
 class AuthController {
 
     * index(request, response) {
-        yield response.sendView('welcome/#login')
+        yield response.sendView('welcome')
     }
 
     * login(request, response) {
@@ -18,10 +18,18 @@ class AuthController {
             error: 'Invalid Credentials'
         }
 
-        // Attempt to login with user name and password
+        // Attempt to login with userName and password
         const authCheck = yield request.auth.attempt(userName, password)
+        const user = yield User.findBy('userName',userName)
         if (authCheck) {
-            return response.redirect('member.njk')
+            if(user.role=='1')
+            return response.redirect('/member')
+            else if(user.role=='2')
+            return response.redirect('/admin')
+            else if(user.role=='3')
+            return response.redirect('/operator')
+            else if(user.role=='4')
+            return response.redirect('/supir')
         }
 
         yield response.sendView('login', { error: loginMessage.error })

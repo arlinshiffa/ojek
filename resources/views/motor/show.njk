@@ -11,7 +11,7 @@
 			<tr>
 				<td style="padding-right: 10px;">
     				{{ form.open({ route: 'motorIUD.edit', params: {id: motor.id} }) }}
-    					{{ form.button('Update','', { class: 'btn btn-success '}) }}
+    					{{ form.button('Update','', { class: 'btn btn-primary '}) }}
     				{{ form.close() }}
 
     			</td>
@@ -24,13 +24,7 @@
     				{{ form.close() }}
 
     			</td>
-					<td style="padding-right: 30px;">
-    				{{ form.open({ route: 'motorIUD.edit', params: {id: motor.id} }) }}
-    					{{csrfField}}
-    					{{ form.button('Edit','', { class: 'btn btn-success '}) }}
 
-    				{{ form.close() }}
-    			</td>
     		</tr>
 		</table>
 		<br>
@@ -54,11 +48,11 @@
 					<td class="col-md-6">{{ motor.type}}</td>
 				</tr>
 				<tr>
-					<th class="col-md-2">Number</th>
+					<th class="col-md-2">License Plate</th>
 					<td class="col-md-6">{{ motor.licensePlate }}</td>
 				</tr>
 				<tr>
-					<th class="col-md-2">Number</th>
+					<th class="col-md-2">color</th>
 					<td class="col-md-6">{{ motor.color }}</td>
 				</tr>
 

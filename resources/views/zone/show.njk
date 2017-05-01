@@ -11,7 +11,7 @@
 			<tr>
 				<td style="padding-right: 10px;">
     				{{ form.open({ route: 'zoneIUD.edit', params: {id: zone.id} }) }}
-    					{{ form.button('Update','', { class: 'btn btn-success '}) }}
+    					{{ form.button('Update','', { class: 'btn btn-primary '}) }}
     				{{ form.close() }}
 
     			</td>
@@ -24,13 +24,7 @@
     				{{ form.close() }}
 
     			</td>
-					<td style="padding-right: 30px;">
-    				{{ form.open({ route: 'zoneIUD.edit', params: {id: zone.id} }) }}
-    					{{csrfField}}
-    					{{ form.button('Edit','', { class: 'btn btn-success '}) }}
-
-    				{{ form.close() }}
-    			</td>
+				
     		</tr>
 		</table>
 		<br>

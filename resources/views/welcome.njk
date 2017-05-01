@@ -62,8 +62,9 @@
               <div class="col-xs-6 text-right wow fadeInUp" data-wow-delay="1s">
                 <a href="#login" class="btn btn-secondary btn-lg scroll">LOG IN</a>
               </div>
-              <div class="col-xs-6 text-left wow fadeInUp" data-wow-delay="1.4s">
-                <a href="#register" class="btn btn-primary btn-lg scroll">REGISTER</a>
+              <div class="col-xs-2 text-right wow fadeInUp" data-wow-delay="1.3s">
+            <a href='register'> <button type="button" class="btn btn-primary btn-lg ">REGISTER</button></a>
+            </div>
               </div>
             </div>
             <!--End Button Row-->
@@ -74,92 +75,6 @@
     </div>
   </div>
 </header>
-<!--Pendaftaran-->
-<section id="register" class="pad-lg light-gray-bg">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-8 col-sm-offset-2 text-center">
-        <i class="fa fa-envelope-o margin-40"></i>
-        <h2 class="black">Form Register</h2>
-        <br />
-        <p class="black">Dapatkan seluruh kemudahan yang kami sediakan.</p>
-        <br />
-
-
-        <div class="form-horizontal">
-          {{ form.open({route: 'userIUD.store'}) }}
-          <div class="form-group">
-            {{ form.text('userName','Create new user name',{ class: 'form-control'})}}
-          </div>
-          <div class="form-group">
-            {{ form.password('password','create your Password',{ class: 'form-control'})}}
-          </div>
-
-          <div class="form-group">
-            <div class="col-sm-offset-2 col-sm-8">
-              <button type="submit" class="btn btn-primary btn-lg" href="register">REGISTER</button>
-            </div>
-            </div>
-              {{ form.close() }}
-
-
-        </div>
-        <!-- Modal -->
-        <div class="modal fade" id="detail" role="dialog">
-          <div class="modal-dialog">
-
-            <!-- Modal content-->
-            <div class="modal-content">
-              <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">Selamat bergabung menjadi member kami!</h4>
-              </div>
-              <div class="modal-body">
-                <p>Masukkan detail profil Anda:</p>
-              </br>
-
-              {{ form.open({Route: 'memberIUD.store'}) }} {{ csrfField }}
-
-              <div class="field">
-                {{ form.text('name', 'Enter full name',{class:'form-control'}) }}
-              </div>
-
-              <div class="field">
-                {{ form.text('KTP', 'Enter KTP Number',{class:'form-control'}) }}
-              </div>
-
-
-              <div class="field">
-                {{ form.text('email', 'Enter email address',{class:'form-control'}) }}
-              </div>
-
-
-              <div class="field">
-                {{ form.text('number', 'Enter your phone number',{class:'form-control'}) }}
-              </div>
-
-
-              <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-8">
-                  {{ form.submit('SUBMIT','submit', { class: ' btn btn-primary'}) }}
-                </div>
-              </div>
-              {{ form.close() }}
-
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-
-
-</div>
-</div>
-</div>
-</section>
-
-
 
 <!--Masuk-->
 <section id="login" class="pad-lg light-gray-bg">
@@ -171,34 +86,32 @@
         <div class="row">
           <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
 
-            <div class="form-horizontal">
-              {{ form.open({route: 'userIUD.store'}) }}
-              {{csrfField}}
-              <div class="form-group">
-                {{ form.text('userName',' User Name',{ class: 'form-control'})}}
-              </div>
-              <div class="form-group">
-                {{ form.password('password','Password',{ class: 'form-control'})}}
-              </div>
-              <p>1 for your member role profile for database</p>
-              <div class="form-group">
-                {{ form.text('role',' 1',{ class: 'form-control'})}}
-              </div>
-              <div class="form-group">
-              				    			<div class="col-sm-offset-2 col-sm-8">
-              				    				{{ form.submit('SIGN IN','submit', { class: ' btn btn-lg btn-primary'}) }}
-              				    			</div>
-              				    		</div>
-              </div>
+            <form class="form-horizontal" role="form" method="POST" action="/">
 
 
-                  {{ form.close() }}
+                          {{ csrfField }}
 
 
+                          <div class="form-group">
 
+                                  <input id="userName" type="userName" class="form-control" placeholder="User Name "name="userName" required>
 
+                          </div>
 
-        </div>
+                          <div class="form-group">
+
+                                  <input id="password" type="password" class="form-control" placeholder="Password" name="password" required>
+
+                          </div>
+
+                          <div class="form-group">
+                              <div class="col-md-4 col-md-offset-4">
+                                  <button type="submit" class="btn btn-primary btn-lg">
+                                      <i class="fa fa-btn fa-sign-in"></i> Login
+                                  </button>
+                              </div>
+                          </div>
+                      </form>
 
       </div>
 
