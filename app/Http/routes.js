@@ -17,6 +17,7 @@
 
 const Route = use('Route')
 
+
 Route.on('/').render('welcome')
 // Route.get('welcome','AuthController.index')
 // Route.port('welcome','AuthController')
@@ -26,11 +27,14 @@ Route.on('/').render('welcome')
 
 //on = redirect, get = manggil method di dalam, resource = manggil semua method di dlm controller
 
-
+Route.resource('member','TempController')
+Route.resource('/supir','HistoryDriverController')
 Route.on('/admin').render('admin')
-Route.on('/operator').render('operator')
-Route.on('/driver').render('driver')
-Route.resource('member','ChooseZoneController')
+Route.resource('/operator','OperatorRekamController')
+Route.on('/supir').render('supir')
+Route.on('/logout').render('welcome')
+Route.on('/berhasilRegister').render('berhasilRegister')
+
 // Route.get('/driverIUD', 'UserController.show').as('profile')
 
 
@@ -48,7 +52,6 @@ Route.resource('motorIUD','MotorController')
 
 Route.get('/', 'AuthController.index')
 Route.post('/', 'AuthController.login')
-
 
 
 Route.get('/register', 'RegisterController.index')

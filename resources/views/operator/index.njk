@@ -17,10 +17,10 @@
         <table class="table table-striped">
         <thead>
           <tr>
-            <th>Nama operator</th>
+
             <th>Create Date</th>
 		        <th>Update Date</th>
-		        <th>number</th>
+
 					  <th>id</th>
           </tr>
         <thead/>
@@ -28,10 +28,10 @@
 
         {% for operator in operators %}
           <tr>
-            <td>{{operator.name}}</td>
+
             <td>{{operator.created_at }}</td>
 		        <td>{{ operator.updated_at }}</td>
-		        <td>{{ operator.number}}</td>
+		      
 		        <td>{{ operator.id }}</td>
             <th><a href="operatorIUD/{{operator.id}}">View</a></th>
           <tr>

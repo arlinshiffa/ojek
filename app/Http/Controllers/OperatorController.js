@@ -23,11 +23,12 @@ class OperatorController {
     const operator = new Operator()
     user.username = request.input('userName')
     user.password = request.input('password')
+    user.number= request.input('number')
+    user.name = request.input('name')
     user.role='3';
     yield user.save()
     const userLast = yield User.last()
-    operator.number= request.input('number')
-    operator.name = request.input('name')
+    
     operator.idUser = userLast.id
     yield operator.save()
 

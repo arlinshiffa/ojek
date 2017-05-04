@@ -14,13 +14,13 @@ class RegisterController {
         const member = new Member()
         user.username = request.input('userName')
         user.password = request.input('password')
+        user.number= request.input('number')
+        user.name = request.input('name')
         user.role='1';
         yield user.save()
         const userLast = yield User.last()
         member.KTP= request.input('KTP')
-        member.number= request.input('number')
         member.email = request.input('email')
-        member.name = request.input('name')
         member.idUser = userLast.id
 
         yield member.save()
@@ -28,7 +28,7 @@ class RegisterController {
             success: 'Registration Successful! Now go ahead and login'
         }
 
-        yield response.sendView('register', { registerMessage : registerMessage })
+        yield response.sendView('berhasilRegister', { registerMessage : registerMessage })
     }
 }
 

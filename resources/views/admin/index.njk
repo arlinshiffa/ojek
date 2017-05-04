@@ -14,15 +14,17 @@
             {{form.button('Create','',{class:'btn btn-primary'})}}
         {{form.close()}}
 
-        
+
 
         <table class="table table-striped">
         <thead>
           <tr>
-            <th>Nama Admin</th>
+            <th>ID</th>
+            <th>Name</th>
+            <th>number</th>
             <th>Create Date</th>
 		        <th>Update Date</th>
-		        <th>number</th>
+
 					  <th>id</th>
 
           </tr>
@@ -31,10 +33,12 @@
 
         {% for admin in admins %}
           <tr>
-            <td>{{admin.name}}</td>
+            <td>{{admin.id}}</td>
+            <td>{{admin.name }}</td>
+            <td>{{admin.number }}</td>
             <td>{{admin.created_at }}</td>
 		        <td>{{ admin.updated_at }}</td>
-		        <td>{{ admin.number}}</td>
+
 		        <td>{{ admin.id }}</td>
             <th><a href="adminIUD/{{admin.id}}">View</a></th>
           <tr>

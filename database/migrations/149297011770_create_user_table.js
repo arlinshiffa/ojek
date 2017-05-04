@@ -9,9 +9,10 @@ class UsersTableSchema extends Schema {
     //   table.increments()
     //   table.timestamps()
     //   table.string('userName', 30).unique().notNullable()
-    //   table.string('password', 100).unique().notNullable()
-    //   table.integer('role').unsigned().index().references('id').inTable('roles')
-    //
+    //   table.string('password').notNullable()
+    //   table.integer('role', 1).unsigned().index().references('id').inTable('roles').notNullable()
+    //   table.string('name',50).notNullable()
+    //   table.string('number', 12).unique()
     // })
 
 

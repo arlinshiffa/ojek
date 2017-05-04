@@ -4,13 +4,12 @@
 const Admin= use('App/Model/Admin')
 const User = use('App/Model/User')
 const Hash = use('Hash')
-const Role = use('app/Model/Role')
+const Database = use('Database')
 class AdminController {
 
   * index(request, response) {
-    const admins = yield Admin.all()
-    const user = yield User.all()
-    yield response.sendView('admin/index', {admins:admins.toJSON(), user:user.toJSON()})
+    const adminDetail = yield Database.table('users').innerJoin('admins','users.id','admins.idUser')
+    yield response.sendView('admin/index',{admins:adminDetail})
   }
 
   * create(request, response) {
@@ -23,12 +22,13 @@ class AdminController {
     const admin = new Admin()
     user.username = request.input('userName')
     user.password = request.input('password')
+    user.number= request.input('number')
+    user.name = request.input('name')
     user.role='2';
     yield user.save()
 
     const userLast = yield User.last()
-    admin.number= request.input('number')
-    admin.name = request.input('name')
+
     admin.idUser = userLast.id
     yield admin.save()
 

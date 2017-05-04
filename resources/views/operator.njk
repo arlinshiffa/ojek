@@ -85,7 +85,7 @@
             </div>
             <div class="collapse navbar-collapse" id="myNavbar">
                 <ul class="nav navbar-nav navbar-right">
-                     <li><a href="/"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+                     <li><a href="logout"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
                 </ul>
             </div>
         </div>
@@ -107,7 +107,7 @@
                                         <th>ID Transaksi</th>
                                         <th>ID Supir</th>
                                         <th>ID Member</th>
-                                        <th>Tanggal</th>
+                                        <th>Waktu/Tanggal</th>
                                         <th>Zona Tujuan</th>
                                         <th>Tarif</th>
                                     </tr>
@@ -117,9 +117,10 @@
                                 {% for transaction in transactions %}
                                   <tr>
                                     <td>{{transaction.id}}</td>
-                                    <td>{{transaction.idSupir }}</td>
+                                    <td>{{transaction.idDriver}}</td>
                         		        <td>{{ transaction.idMember}}</td>
                         		        <td>{{ transaction.created_at }}</td>
+                                    <td>{{ transaction.name}}</td>
                                     <td>{{ transaction.fare}}</td>
 
 

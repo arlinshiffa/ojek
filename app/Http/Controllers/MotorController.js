@@ -22,7 +22,7 @@ class MotorController {
   }
 
   * show(request, response) {
-    const motor=yield Motor.findBy('id', request.param('id'))
+    const zone=yield Zone.all
     yield response.sendView('motor/show',{motor:motor.toJSON()})
 
   }

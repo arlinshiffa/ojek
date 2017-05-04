@@ -5,23 +5,22 @@ const Schema = use('Schema')
 class DriversTableSchema extends Schema {
 
   up () {
-    this.create('drivers', (table) => {
-      table.increments()
-      table.timestamps()
-      table.boolean('status').defaultTo(false)
-      table.string('SIM', 20).unique()
-      table.integer('idUser').unsigned().index().references('id').inTable('users')
-      table.string('number').unique()
-      table.string('name', 200).notNullable()
-
-
-    })
+    // this.create('drivers', (table) => {
+    //   table.increments()
+    //   table.timestamps()
+    //   table.boolean('status', 1).defaultTo(false)
+    //   table.string('SIM', 20).unique().notNullable()
+    //   table.integer('idUser').unsigned().index().references('id').inTable('users')
+    //
+    //
+    //
+    // })
 
 
   }
 
   down () {
-    this.dropIfExists('drivers')
+    // this.dropIfExists('drivers')
   }
 
 }

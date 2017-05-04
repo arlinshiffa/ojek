@@ -17,9 +17,10 @@
         <thead>
           <tr>
             <th>Name</th>
+            <th>Number</th>
             <th>Create Date</th>
             <th>Update Date</th>
-            <th>Number</th>
+
             <th>KTP</th>
             <th>email</th>
           </tr>
@@ -27,11 +28,13 @@
         <tbody>
 
         {% for member in members %}
+
           <tr>
-            <td>{{member.name}}</td>
+            <td>{{member.name }}</td>
+            <td>{{member.number }}</td>
             <td>{{member.created_at }}</td>
 		        <td>{{ member.updated_at }}</td>
-		        <td>{{ member.number}}</td>
+
 		        <td>{{ member.KTP }}</td>
             <td>{{ member.email }}</td>
             <th><a href="memberIUD/{{member.id}}">View</a></th>

@@ -10,6 +10,11 @@ class UserController {
     yield response.sendView('user/index', {users:users.toJSON()})
   }
 
+  * greet(request, response){
+    const user = yield User.findBy(request.param('userName'))
+    yield response.sendView('member',{user})
+  }
+
   * create(request, response) {
     yield response.sendView('user/create')
     yield response.sendView('user/index', {users:users.toJSON()})

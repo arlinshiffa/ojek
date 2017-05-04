@@ -85,10 +85,10 @@
       </button>
                 <a class="navbar-brand" >Halaman Utama Driver</a>
             </div>
-            <div class="collapse snavbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav navbar-right">
-                     <li><a href="/"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
-                </ul>
+            <div class="collapse navbar-collapse" id="myNavbar">
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="logout"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+              </ul>
             </div>
         </div>
     </nav>
@@ -127,7 +127,7 @@
 
             </div>
             <div class="col-sm-8 text-left">
-                <h1>Selamat Datang, Driver!</h1>
+                <h1>Selamat Datang, {{transactions.name}}!</h1>
                 <p1>Disini Anda dapat melihat transaksi, pendapatan yang masuk hari ini dan bulan ini.</p1>
                 <hr>
                 <div class="container">
@@ -137,10 +137,20 @@
                             <tr>
                                 <th>ID Transaksi</th>
                                 <th>Tarif</th>
-                                <th>Waktu</th>
-                                <th>Tanggal</th>
+                                <th>Waktu/Tanggal</th>
+
                             </tr>
                         </thead>
+                        <tbody>
+
+                          {% for transaction in transactions %}
+                          <tr>
+                            <td>{{transaction.id}}</td>
+                            <td>{{transaction.fare}}</td>
+                            <td>{{transaction.created_at}}</td>
+                            <tr>
+                              {%endfor%}
+                            </tbody>
                     </table>
                 </div>
 

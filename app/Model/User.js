@@ -18,9 +18,16 @@ class User extends Lucid {
     })
   }
 
+
+
   apiTokens () {
     return this.hasMany('App/Model/Token')
   }
+
+  driver(){
+    return this.belongsToOne('App/Model/Driver')
+  }
+
 
 }
 

@@ -8,13 +8,13 @@ class RolesTableSchema extends Schema {
     // this.create('roles', (table) => {
     //   table.increments()
     //   table.timestamps()
-    //   table.string('name').unique()
+    //   table.string('name', 10).unique()
     // })
   }
 
   down () {
-    // this.dropIfExists('roles')
-  }
+  //   this.dropIfExists('roles')
+   }
 
 }
 
